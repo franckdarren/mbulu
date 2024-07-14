@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function AdminNavbar() {
     return (
         <nav id="navbar-main" className="navbar is-fixed-top">
@@ -21,28 +23,30 @@ export function AdminNavbar() {
                     <div className="navbar-item dropdown has-divider has-user-avatar">
                         <a className="navbar-link">
                             <div className="user-avatar">
-                                <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe" className="rounded-full" />
+                                <Image
+                                    src="/assets/profil.jpg"
+                                    alt="Image de l'utilisateru"
+                                    width={85}
+                                    height={85}
+                                    className="rounded-full"
+                                />
                             </div>
-                            <div className="is-user-name"><span>John Doe</span></div>
+                            <div className="is-user-name"><span>Franck Darren</span></div>
                             <span className="icon"><i className="mdi mdi-chevron-down"></i></span>
                         </a>
                         <div className="navbar-dropdown">
-                            <a href="profile.html" className="navbar-item --set-active-profile-html">
+                            <a href="profile.html" className="navbar-item hover:bg-slate-200">
                                 <span className="icon"><i className="mdi mdi-account"></i></span>
-                                <span>My Profile</span>
+                                <span>Mon compte</span>
                             </a>
-                            <a className="navbar-item">
-                                <span className="icon"><i className="mdi mdi-settings"></i></span>
-                                <span>Settings</span>
-                            </a>
-                            <a className="navbar-item">
+                            <a className="navbar-item hover:bg-slate-200">
                                 <span className="icon"><i className="mdi mdi-email"></i></span>
-                                <span>Messages</span>
+                                <span>Notifications</span>
                             </a>
                             <hr className="navbar-divider" />
-                            <a className="navbar-item">
+                            <a className="navbar-item hover:bg-slate-200">
                                 <span className="icon"><i className="mdi mdi-logout"></i></span>
-                                <span>Log Out</span>
+                                <span>Se déconnecter</span>
                             </a>
                         </div>
                     </div>
