@@ -1,0 +1,91 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                     String         @id @default(auto()) @map("_id") @db.ObjectId
+  email                  String         @unique
+  password               String
+  role                   Role
+  contributions          Contribution[]
+  validatedContributions Contribution[] @relation("ValidatedContributions")
+  Course                 Course[]
+  Enrollment             Enrollment[]
+  createdAt              DateTime       @default(now())
+  updatedAt              DateTime       @updatedAt
+}
+
+enum Role {
+  USER
+  CONTRIBUTOR
+  ADMIN
+}
+
+model Language {
+  id            String         @id @default(auto()) @map("_id") @db.ObjectId
+  name          String         @unique
+  description   String
+  contributions Contribution[]
+}
+
+model Contribution {
+  id          String             @id @default(auto()) @map("_id") @db.ObjectId
+  mot         String
+  traduction  String
+  status      ContributionStatus @default(ENVOYE)
+  userId      String             @db.ObjectId
+  user        User               @relation(fields: [userId], references: [id])
+  languageId  String             @db.ObjectId
+  language    Language           @relation(fields: [languageId], references: [id])
+  validatorId String?            @db.ObjectId
+  validator   User?              @relation("ValidatedContributions", fields: [validatorId], references: [id])
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+}
+
+enum ContributionStatus {
+  ENVOYE
+  APPROUVE
+  REJETE
+}
+
+model Course {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  titre       String
+  description String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  userId      String       @db.ObjectId
+  user        User         @relation(fields: [userId], references: [id])
+  Enrollment  Enrollment[]
+  Lesson      Lesson[]
+}
+
+model Enrollment {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  courseId  String   @db.ObjectId
+  course    Course   @relation(fields: [courseId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Lesson {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  titre       String
+  description String?
+  courseId    String   @db.ObjectId
+  course      Course   @relation(fields: [courseId], references: [id])
+  createdAt   DateTime @default(now())
+}
