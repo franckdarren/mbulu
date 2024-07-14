@@ -2,7 +2,7 @@
 export default function Dashboard() {
     return (
         <main className="">
-            <h1>Page d&apos;administration</h1>
+            <h1>Tableau de bord</h1>
         </main>
     );
 }
