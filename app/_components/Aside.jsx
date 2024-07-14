@@ -1,8 +1,18 @@
+import Image from "next/image";
+
+
 export function Aside() {
     return (
         <aside className="aside is-placed-left is-expanded">
             <div className="aside-tools">
-                <div>
+                <div className="flex items-center gap-3">
+                    <Image
+                        src="/assets/logo.png"
+                        alt="Logo de mbulu"
+                        width={55}
+                        height={55}
+                        className="h-auto"
+                    />
                     <b className="font-black">Mbulu</b>
                 </div>
             </div>
