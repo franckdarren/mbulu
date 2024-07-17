@@ -1,5 +1,6 @@
 import { AdminNavbar } from "../_components/AdminNavbar";
 import { Aside } from "../_components/Aside";
+import "../main.css";
 
 export default function Layout({ children }) {
     return (

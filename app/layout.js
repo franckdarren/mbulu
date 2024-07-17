@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "./main.css";
 import '@mdi/font/css/materialdesignicons.min.css';
 
 
