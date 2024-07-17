@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import '@mdi/font/css/materialdesignicons.min.css';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,8 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
+      <head>
+      </head>
       <body className={inter.className}>
         {children}
+        <script
+          src="../script.js" defer>
+        </script>
       </body>
     </html>
   );
