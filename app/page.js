@@ -19,7 +19,7 @@ export default function Home() {
 
 const Header = () => {
   return (
-    <header class="flex items-center flex-col justify-center md:h-[628px] h-[280px] bg-cover bg-center h-screen" style={{ backgroundImage: 'url(/assets/bgheader.png)'}}>
+    <header class="flex items-center flex-col justify-center md:h-[628px] h-[280px] bg-cover bg-center" style={{ backgroundImage: 'url(/assets/bgheader.png)'}}>
         <div class="flex items-center flex-col">
           <div class="mb-[46px] w-[342px] md:h-[143px] md:w-[515px] md:flex md:justify-center md:items-center md:flex-col">
             <h1 class="text-white md:text-[48px] text-[20px] md:leading-tight text-center">Apprendre les langues <br class="md:mt-[100px]"></br> naturellement</h1>
