@@ -3,9 +3,11 @@ import { Navbar } from "./_components/Navbar";
 import { Footer } from "./_components/Footer";
 import {Button} from "./_components/Button";
 
+
+
 export default function Home() {
   return (
-    <main className="">
+    <main class="">
       <Navbar />
       <Header />
       <Section1 />
@@ -41,7 +43,25 @@ const Section1 = () => {
 
 const Section2 = () => {
   return (
-    <p>Section 2</p>
+    <div class="flex items-center text-center bg-orange-500 justify-center">
+      <div class="flex bg-orange-500 w-3/4 justify-center text-center justify-between w-16 md:w-32">
+        <div>
+          <Image
+            src="/USER/Desktop/Projet%20Mbulu/mbulu/public/assets/___1_-removebg-preview.png?version%3D1721311552006"
+            width={500}
+            height={500}
+            alt="image"
+            class="w-3/4 items-center"
+          />
+        </div>  
+          <h3 class="w-3/4 text-center items-center content-center text-wrap ">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum
+                  vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus.
+                  Nullam vitae lacus sit amet eros vestibulum ullamcorper. pharetra diam ut urna facilisis, et facilisis
+                  magna fringilla.
+          </h3>
+      </div>
+    </div>
   );
 };
 
