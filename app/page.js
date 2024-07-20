@@ -42,14 +42,14 @@ const Header = () => {
 
 const Section1 = () => {
   return (
-    <div class="max-w-xl mx-auto bg-gradient-to-r from-orange-400 to-orange-500 rounded-xl shadow-md p-6 text-white">
+    <div class="my-[50px] max-w-xl mx-auto bg-gradient-to-r from-orange-400 to-orange-500 rounded-xl shadow-md p-6 text-white">
       <div class="flex flex-col md:flex-row items-center">
         <Image
           src="/assets/___1_-removebg-preview.png"
-          width={900}
-          height={500}
+          width={700}
+          height={400}
           alt="image"
-          class="rounded-full bg-white shadow h-48 w-48 mb-4 md:mb-0 md:mr-6"
+          class="h-68 w-48 mb-4 md:mb-0 md:mr-6"
         />
         <div>
           <h1 class="text-2xl font-bold mb-2">Interactive Announcement</h1>
@@ -91,7 +91,7 @@ const Section2 = () => {
 
 const SectionCard = () => {
   return (
-    <div>
+    <div class="my-[50px]">
       <h1 className="text-center text-[16px] font-normal md:text-[20px] md:font-normal md: my-[25px]">Choisir la langue</h1>
       <div className="flex flex-col items-center mt-[10px] mb-[10px] md:flex md:flex-row md:items-center md:justify-center md:gap-[15px]">
 
@@ -106,19 +106,19 @@ const SectionCard = () => {
 
 const Section4 = () => {
   return (
-  <div class="bg-[#012d36] md:flex md:flex-row flex-col items-center justify-center px-6">
-    <div class="md:w-[95%]">
+  <div class="bg-[#012d36] md:flex py-[20px] md:flex-row flex-col items-center md:justify-around px-6">
+    <div class="md:w-[95%] md:ml-8">
       <div>
-        <h1 class="text-[#fb9600] text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
+        <h1 class="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
       </div>
       <div>
         <p class="text-[white] text-[10px] md:text-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p></div>
       </div>  
     <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
       <Image src="/assets/img family.png"
-        width={185}
-        height={153}
-        className="relative top-[15px]  rounded-lg md:w-[424px] md:h-[307px]"/>
+        width={285}
+        height={253}
+        className="relative top-[15px]  rounded-lg md:w-[400px] md:h-[307px]"/>
     </div>
   </div>
   );
