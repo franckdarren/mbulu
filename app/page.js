@@ -42,42 +42,42 @@ const Header = () => {
 
 const Section1 = () => {
   return (
-    <p>Section 1</p>
+    <div class="max-w-xl mx-auto bg-gradient-to-r from-orange-400 to-orange-500 rounded-xl shadow-md p-6 text-white">
+    <div class="flex flex-col md:flex-row items-center">
+      <Image
+              src="/assets/___1_-removebg-preview.png"
+              width={900}
+              height={500}
+              alt="image"
+              class="rounded-full bg-white shadow h-48 w-48 mb-4 md:mb-0 md:mr-6"
+            />
+      <div>
+        <h1 class="text-2xl font-bold mb-2">Interactive Announcement</h1>
+        <p class="mb-2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper. 
+        </p>
+        <p>
+          Phaetra diam ut urna facilisis, et facilisis magna fringilla.
+        </p>
+      </div>
+    </div>
+  </div>
   );
 };
 
 const Section2 = () => {
   return (
-    <div class="max-w-xl mx-auto bg-gradient-to-r from-orange-400 to-orange-500 rounded-xl shadow-md p-6 text-white">
-  <div class="flex flex-col md:flex-row items-center">
-    <Image
-            src="/assets/___1_-removebg-preview.png"
-            width={900}
-            height={500}
-            alt="image"
-            class="rounded-full bg-white shadow h-48 w-48 mb-4 md:mb-0 md:mr-6"
-          />
-    <div>
-      <h1 class="text-2xl font-bold mb-2">Interactive Announcement</h1>
-      <p class="mb-2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper. 
-      </p>
-      <p>
-        Phaetra diam ut urna facilisis, et facilisis magna fringilla.
-      </p>
-    </div>
-  </div>
-</div>
+    
   );
 };
 
-const Section2 = () => {
+const Section3 = () => {
   return (
     <p>  section deux </p>
   );
 };
 
-const Section2 = () => {
+const Section = () => {
   return (
     <div className="bg-[#03829c]">
       <Image src="/assets/WeWork — Rebecca Mock.gif"
