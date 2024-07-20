@@ -14,11 +14,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <head>
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+          rel="stylesheet"
+        />
+        <link
+          rel="icon"
+          href="/icon"
+          type="image"
+        />
       </head>
       <body className={inter.className}>
         {children}
         <script
           src="../script.js" defer>
+        </script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"
+          defer>
         </script>
       </body>
     </html>
