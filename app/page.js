@@ -12,7 +12,6 @@ export default function Home() {
       <Header />
       <Section1 />
       <Section2 />
-      <Section3 />
       <SectionCard />
       <Section4 />
       <Footer />
@@ -40,13 +39,8 @@ const Header = () => {
   );
 };
 
-const Section1 = () => {
-  return (
-    <p>Section 1</p>
-  );
-};
 
-const Section2 = () => {
+const Section1 = () => {
   return (
     <div class="max-w-xl mx-auto bg-gradient-to-r from-orange-400 to-orange-500 rounded-xl shadow-md p-6 text-white">
       <div class="flex flex-col md:flex-row items-center">
@@ -71,7 +65,7 @@ const Section2 = () => {
   );
 };
 
-const Section3 = () => {
+const Section2 = () => {
   return (
     <div className="bg-[#03829c]">
       <Image src="/assets/WeWork — Rebecca Mock.gif"
@@ -112,6 +106,20 @@ const SectionCard = () => {
 
 const Section4 = () => {
   return (
-    <p>Section 4</p>
+  <div class="bg-[#012d36] md:flex md:flex-row flex-col items-center justify-center px-6">
+    <div class="md:w-[95%]">
+      <div>
+        <h1 class="text-[#fb9600] text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
+      </div>
+      <div>
+        <p class="text-[white] text-[10px] md:text-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p></div>
+      </div>  
+    <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
+      <Image src="/assets/img family.png"
+        width={185}
+        height={153}
+        className="relative top-[15px]  rounded-lg md:w-[424px] md:h-[307px]"/>
+    </div>
+  </div>
   );
 };
