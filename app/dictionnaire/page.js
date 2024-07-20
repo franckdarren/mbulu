@@ -8,7 +8,7 @@ export default function PageDictionnaire() {
         <main className="">
             <Navbar />
             
-            <div className="flex flex-row">
+            <div className="flex flex-row py-[15px]">
                 <Image
                 src="/assets/Group 1.svg"
                 alt="logo"
@@ -16,9 +16,9 @@ export default function PageDictionnaire() {
                 height={168}
                 className="ml-[25px] md:ml-[150px]"
                 />
-                <div className="md:w-[65%]">
+                <div className="md:w-[65%] mt-[40px]">
                 <div>
-                    <select id="dropdown" name="dropdown" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"> 
+                    <select id="dropdown" name="dropdown" className="mt-1 block w-[250px] py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm max-sm:w-[150px] mb-2"> 
                         <option>Français - Punu</option> 
                         <option>Françcais - Fang</option> 
                         <option> Français - Myene</option> 
