@@ -49,9 +49,9 @@ const Section1 = () => {
               width={900}
               height={500}
               alt="image"
-              class="rounded-full bg-white shadow h-48 w-48 mb-4 md:mb-0 md:mr-6"
+              class="rounded-full h-48 w-48 mb-4 md:mb-0 md:mr-6"
             />
-      <div>
+      <div class="w-auto">
         <h1 class="text-2xl font-bold mb-2">Interactive Announcement</h1>
         <p class="mb-2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper. 
@@ -68,7 +68,7 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <div>    
-      <p> retourne </p>
+      <p> retoune </p>
 
     </div>
   );
