@@ -60,7 +60,7 @@ export function Navbar() {
                             </li>
                             <li>
                                 <a
-                                    href="/produits"
+                                    href="/dictionnaire"
                                     className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
                                 >
                                     Traduction
@@ -94,8 +94,12 @@ export function Navbar() {
                     </div>
 
                     <div className="md:flex md:gap-3 hidden">
-                        <Button titreButton="S'inscrire" color="bg-[#22AAC6] hover:bg-[#e08e49]" />
-                        <Button titreButton="Se connecter" color="bg-[#093741] hover:bg-[#e08e49]" />
+                        <a href="/register">
+                            <Button titreButton="S'inscrire" color="bg-[#22AAC6] hover:bg-[#e08e49]" />
+                        </a>
+                        <a href="/login">
+                            <Button titreButton="Se connecter" color="bg-[#093741] hover:bg-[#e08e49]" />
+                        </a>
                     </div>
 
                 </div>
