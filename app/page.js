@@ -67,7 +67,10 @@ const Section1 = () => {
 
 const Section2 = () => {
   return (
-    
+    <div>    
+      <p> retourne </p>
+
+    </div>
   );
 };
 
