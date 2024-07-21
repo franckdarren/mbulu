@@ -90,7 +90,7 @@ const Section2 = () => {
 
 const SectionCard = () => {
   return (
-    <div>
+    <div className="my-[150px]">
       <h1 className="text-center text-[16px] font-normal md:text-[20px] md:font-normal md: my-[25px]">Choisir la langue</h1>
       <div className="flex flex-col items-center mt-[10px] mb-[10px] md:flex md:flex-row md:items-center md:justify-center md:gap-[15px]">
 
