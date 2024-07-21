@@ -68,6 +68,14 @@ export function Navbar() {
                             </li>
                             <li>
                                 <a
+                                    href="/cours"
+                                    className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                >
+                                    Cours
+                                </a>
+                            </li>
+                            <li>
+                                <a
                                     href="/a-propos"
                                     className="block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 "
                                 >
