@@ -95,10 +95,10 @@ export function Navbar() {
 
                     <div className="md:flex md:gap-3 hidden">
                         <a href="/register">
-                            <Button titreButton="S'inscrire" color="bg-[#22AAC6] hover:bg-[#e08e49]" />
+                            <Button titreButton="S'inscrire" color="bg-[#22AAC6] hover:bg-[#61B3C3]" />
                         </a>
                         <a href="/login">
-                            <Button titreButton="Se connecter" color="bg-[#093741] hover:bg-[#e08e49]" />
+                            <Button titreButton="Se connecter" color="bg-[#093741] hover:bg-[#35727E]" />
                         </a>
                     </div>
 
