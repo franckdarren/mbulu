@@ -42,26 +42,25 @@ const Header = () => {
 
 const Section1 = () => {
   return (
-    <div class="my-[50px] max-w-xl mx-auto bg-gradient-to-r from-orange-400 to-orange-500 rounded-xl shadow-md p-6 text-white">
-      <div class="flex flex-col md:flex-row items-center">
-        <Image
-          src="/assets/___1_-removebg-preview.png"
-          width={700}
-          height={400}
-          alt="image"
-          class="h-68 w-48 mb-4 md:mb-0 md:mr-6"
-        />
-        <div>
-          <h1 class="text-2xl font-bold mb-2">Interactive Announcement</h1>
-          <p class="mb-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.
-          </p>
-          <p>
-            Phaetra diam ut urna facilisis, et facilisis magna fringilla.
-          </p>
+    <div class=" md:h-[400px] md:mx-[10%] bg-gradient-to-r my-7 from-orange-400 to-orange-500 rounded-xl text-white">
+        <div class="flex justify-center px-1">
+              <div class="md:h-[400px] md:flex md:flex-col md:justify-end md:items-baseline ">
+                <Image
+                  src="/assets/___1_-removebg-preview.png"
+                  width={212}
+                  height={106}
+                  alt="image"
+                  class=" w-[100%] h-[100%] "
+                />
+              </div>
+          <div class="md:flex md:flex-col md:justify-center w-[70%] px-4">
+            <h1 class="text-2xl font-bold my-2">Interactive Announcement</h1>
+            <p class="my-2 text-[15px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper. 
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
+  </div>
   );
 };
 
@@ -69,17 +68,17 @@ const Section2 = () => {
   return (
     <div className="bg-[#03829c]">
       <Image src="/assets/WeWork — Rebecca Mock.gif"
-        width={185}
-        height={153}
+        width={145}
+        height={113}
         className="relative left-[210px] top-[15px]  rounded-lg md:w-[284px] md:h-[152px] md:left-[60%]"
       />
 
       <h3 className="my-[15px] text-center text-[#fb9600] font-semibold text-[23px] md:text-[30px]">Obtenez des traduction<br /> instantanées dans plusieurs<br />  langues gabonaises</h3>
 
       <div className="flex flex-row justify-evenly items-center ">
-        <Image src="/assets/Keyword search.gif"
-          width={185}
-          height={153}
+        <Image src="/assets/KeywordSearch.gif"
+          width={145}
+          height={113}
           className=" rounded-lg  mb-[10px] md:w-[207px] md:h-[150px]"
         />
 
