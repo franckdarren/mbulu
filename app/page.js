@@ -42,19 +42,20 @@ const Header = () => {
 
 const Section1 = () => {
   return (
-    <div class="max-w-xl mx-auto bg-gradient-to-r my-7 from-orange-400 to-orange-500 rounded-xl text-white">
-        <div class="flex gap-3 px-1">
-          
+    <div class=" md:h-[400px] md:mx-[10%] bg-gradient-to-r my-7 from-orange-400 to-orange-500 rounded-xl text-white">
+        <div class="flex justify-center px-1">
+              <div class="md:h-[400px] md:flex md:flex-col md:justify-end md:items-baseline ">
                 <Image
                   src="/assets/___1_-removebg-preview.png"
-                  width={106}
-                  height={24}
+                  width={212}
+                  height={106}
                   alt="image"
-                  class=""
+                  class=" w-[100%] h-[100%] "
                 />
-          <div class="w-auto p-3">
-            <h1 class="text-2xl font-bold mb-2">Interactive Announcement</h1>
-            <p class="mb-2 text-[15px]">
+              </div>
+          <div class="md:flex md:flex-col md:justify-center w-[70%] px-4">
+            <h1 class="text-2xl font-bold my-2">Interactive Announcement</h1>
+            <p class="my-2 text-[15px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper. 
             </p>
           </div>
