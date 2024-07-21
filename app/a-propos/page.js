@@ -80,7 +80,7 @@ export default function Apropos() {
                             <h1 class="text-[15px] text-amber-500 md:text-[25px] text-center">SPERANDEZI Jean-claude</h1>
                         </div>
                     </div>
-                    <div class="mt-8 flex flex-col justify-center items-center">
+                    <div class="lg:mx-[50px] mt-8 flex flex-col justify-center items-center">
                         <div>
                             <Image
                                 src="/assets/mando.jpeg"
