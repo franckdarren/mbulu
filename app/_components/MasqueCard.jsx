@@ -10,6 +10,7 @@ export function MasqueCard({titre, image}) {
                 width={100}
                 height={100}
                 className="h-[110px] w-auto"
+                alt="image"
                 />
                 <h3 className="text-[18px] font-normal">{titre}</h3>
             </a>

@@ -9,6 +9,7 @@ export function CoursCard() {
                         width={185}
                         height={153}
                         className="relative"
+                        alt="image"
                     /> 
                 </div>
                 <div class="bg-[#f69f1d] p-4 rounded-b-lg w-[274px] h-[155px] ">

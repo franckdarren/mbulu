@@ -85,6 +85,7 @@ const Section2 = () => {
         width={145}
         height={113}
         className="relative left-[210px] top-[15px]  rounded-lg md:w-[284px] md:h-[152px] md:left-[60%]"
+        alt="image"
       />
 
       <h3 className="my-[15px] text-center text-[#fb9600] font-semibold text-[23px] md:text-[30px]">Obtenez des traduction<br /> instantanées dans plusieurs<br />  langues gabonaises</h3>
@@ -94,6 +95,7 @@ const Section2 = () => {
           width={145}
           height={113}
           className=" rounded-lg  mb-[10px] md:w-[207px] md:h-[150px]"
+          alt="image"
         />
 
         <Button titreButton="Essayer une traduction" color="bg-[#FB9600] hover:bg-[#f7af44]" />
@@ -131,7 +133,8 @@ const Section4 = () => {
         <Image src="/assets/img family.png"
           width={285}
           height={253}
-          className="relative top-[15px]  rounded-lg md:w-[400px] md:h-[307px]" />
+          className="relative top-[15px]  rounded-lg md:w-[400px] md:h-[307px]"
+          alt="image" />
       </div>
     </div>
   );
