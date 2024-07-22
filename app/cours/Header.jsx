@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-export function Header({ Image1, titreParagraph, titreText, Image2 }) {
+export function Header({ image1, titreParagraph, titreText, image2 }) {
     return (
         <div className="md:px-[70px] md:py-9 ">
-            <div class="md:flex md:w-[100%] flex-row-reverse md:mb-10 md:h-[507px] h-[350px] md:justify-around md:w:[100%] justify-center items-center flex px-5">
-                <div class="md:w-[500px]"> <Image src={Image1}  alt="image" /> </div>
+            <div class="md:flex md:w-[100%] flex-row-reverse md:mb-10 md:h-[507px] h-[350px] md:justify-center md:w:[100%] justify-center items-center flex px-5">
+                <div class="md:w-[500px]"> <Image src={image1} alt="image" width="400" height="400" /> </div>
                 <div>
-                    <div class="md:w-[237px] w-[137px]"> <Image src={Image2}  alt="image" /> </div>
-                    <div class="text-[48px] md:text-[68px] text-center">{titreText}</div>
+                    <div class="md:w-[237px] w-[137px]"> <Image src={image2} alt="image" width="150" height="150" /> </div>
+                    <div class="text-[48px] md:text-[68px]">{titreText}</div>
                 </div>
             </div>
             <div className="bg-[#fb9600] p-5 rounded-[20px]">
