@@ -12,7 +12,6 @@ export function Dictionnaire({titre, expression, other}){
                 <li>{other}</li>
                 <li>{other}</li>
             </ul>
-
         </div>
     );
 }
