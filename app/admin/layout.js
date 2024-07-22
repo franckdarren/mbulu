@@ -11,9 +11,9 @@ export default async function Layout({ children }) {
 
     const { userId } = auth()
 
-    // if (!userId) {
-    //     redirect("/")
-    // }
+    if (!userId) {
+        redirect("/")
+    }
 
     const data = await getUserFromDatabase(userId)
 

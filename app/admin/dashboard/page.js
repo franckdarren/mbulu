@@ -1,8 +1,6 @@
 import { redirect, Redirect } from "next/navigation";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { addUserToDatabases, getUserFromDatabase } from "@/services/userServices";
-import Image from "next/image";
-import { SignOutButton } from "@clerk/nextjs";
 
 export default async function Dashboard() {
 
@@ -21,7 +19,6 @@ export default async function Dashboard() {
     }
 
     const data = await getUserFromDatabase(userId)
-
     return (
         <main className="">
             <h1>Tableau de bord</h1>
