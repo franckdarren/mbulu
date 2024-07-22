@@ -22,10 +22,23 @@ const SectionCard = () => {
 
 export default function PageCours() {
     return (
-        <main className="">
-            <Navbar />
-            <Header image1="/assets/punu.png"  image2="/assets/mot.gif" titreText="Punu" titreParagraph=" Les origines des Punu sont assez controversées, mais nous pouvons retenir que les Punu viendraient de Bunguri Kassai suite à des guerres , par la suite ils ont fondé Ndunde, puis ils arrivèrent a Divenié au XV e siècle et de Diviniéils se sont séparés avec les quatre clans en prenant des trajets différents. Ils ont cohabité avec les Lumbu et les Vili. Ils trouvèrent les Lumbu sur cette région. Les Vili vinrent par la suite trouver les Lumbu et les Punu installés sur cette partie, région du mont Fuari." />
-            <CoursListe />
+        <main className="flex flex-col min-h-screen w-[100%]">
+            <div className="flex-grow">  
+                <Navbar />
+                    <div class="mt-5 flex justify-center "> 
+                        <h1 className="md:w-[70%] px-[10px] text-center text-[24px] md:text-[34px] font-bold">La méthode ludique pour apprendre une langue du Gabon</h1>
+                    </div>
+                    <div class="flex flex-col justify-center mb-2 items-center">
+                        <Image
+                            src="/assets/livre.gif"
+                            width={270}
+                            height={300}
+                            alt="image"
+                            class="rounded-lg md:w-[550px] md:h-[450px]"
+                        />
+                    </div>
+                <SectionCard />
+            </div>
             <Footer />
         </main>
     );
