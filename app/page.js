@@ -7,6 +7,7 @@ import { auth } from "@clerk/nextjs/server"
 import { Button } from "./_components/Button";
 import { MasqueCard } from "./_components/MasqueCard";
 import { workVideo } from "./_components/MasqueCard";
+import { ButtonFaqs } from "./_components/ButtonFaqs";
 
 export default function Home() {
 
@@ -28,6 +29,7 @@ export default function Home() {
       <Section2 />
       <SectionCard />
       <Section4 />
+      <Faqs />
       <Footer />
     </main>
   );
@@ -62,7 +64,7 @@ const Section1 = () => {
           <Image
             src="/assets/___1_-removebg-preview.png"
             width={212}
-            height={106}
+            height={100}
             alt="image"
             class=" w-[100%] h-[100%] "
           />
@@ -70,7 +72,7 @@ const Section1 = () => {
         <div class="md:flex md:flex-col md:justify-center w-[70%] px-4">
           <h1 class="text-2xl font-bold my-2">Interactive Announcement</h1>
           <p class="my-2 text-[15px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante.
           </p>
         </div>
       </div>
@@ -139,3 +141,12 @@ const Section4 = () => {
     </div>
   );
 };
+
+const Faqs = () => {
+  return(
+    <div>
+      
+      <ButtonFaqs/>
+    </div>
+  )
+}
