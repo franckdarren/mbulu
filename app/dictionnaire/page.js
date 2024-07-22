@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Search } from "./Search";
 import { Navbar } from "../_components/Navbar";
 import { Footer } from "../_components/Footer";
-import {Dictionnaire} from "./Dictionnaire";
 
 export default function PageDictionnaire() {
     return (
@@ -33,9 +32,6 @@ export default function PageDictionnaire() {
             </div>
             <div className="bg-[#FB9600] w-full pl-[20px] mt-[30px]">Dictionnaire Français-Punu</div>
 
-            <Dictionnaire titre="Bonjour" text="Lorem" other=""  />
-            <Dictionnaire titre="Au-revoir" text="Lorem" other=""  />
-            <Dictionnaire titre="bienvenu" text="Lorem" other=""  />
             <Footer />
         </main>
     );
