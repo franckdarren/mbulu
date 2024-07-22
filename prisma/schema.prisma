@@ -25,6 +25,7 @@ model User {
   Enrollment             Enrollment[]
   createdAt              DateTime       @default(now())
   updatedAt              DateTime       @updatedAt
+  clerkUserId String? @unique
 }
 
 enum Role {

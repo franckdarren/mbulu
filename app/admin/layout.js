@@ -11,10 +11,21 @@ export default async function Layout({ children }) {
 
     const { userId } = auth()
 
+    const user = await currentUser()
+    
     if (!userId) {
         redirect("/")
     }
 
+    console.log(userId);
+
+    if (userId && user) {
+        const name = `${user.firstName ?? ''} ${user.lastName ?? ''}`
+        const email = user.emailAddresses[0]?.emailAddress || "";
+        const image = user.imageUrl || "";
+        await addUserToDatabases(userId, name, email, image)
+    }
+    
     const data = await getUserFromDatabase(userId)
 
     return (
