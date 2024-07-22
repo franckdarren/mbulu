@@ -22,16 +22,6 @@ export default function Home() {
 
   return (
     <main>
-      <div className="flex gap-5">
-        <Link href="/sign-in">
-          <button className="bg-blue-500 hover:bg-blue-600 rounded-md text-white p-3">Sign in</button>
-        </Link>
-        <Link href="/sign-up">
-          <button className="bg-blue-500 hover:bg-blue-600 rounded-md text-white p-3">Sign up</button>
-        </Link>
-
-      </div>
-
       <Navbar />
       <Header />
       <Section1 />
@@ -67,24 +57,24 @@ const Header = () => {
 const Section1 = () => {
   return (
     <div class=" md:h-[400px] md:mx-[10%] bg-gradient-to-r my-7 from-orange-400 to-orange-500 rounded-xl text-white">
-        <div class="flex justify-center px-1">
-              <div class="md:h-[400px] md:flex md:flex-col md:justify-end md:items-baseline ">
-                <Image
-                  src="/assets/___1_-removebg-preview.png"
-                  width={212}
-                  height={106}
-                  alt="image"
-                  class=" w-[100%] h-[100%] "
-                />
-              </div>
-          <div class="md:flex md:flex-col md:justify-center w-[70%] px-4">
-            <h1 class="text-2xl font-bold my-2">Interactive Announcement</h1>
-            <p class="my-2 text-[15px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper. 
-            </p>
-          </div>
+      <div class="flex justify-center px-1">
+        <div class="md:h-[400px] md:flex md:flex-col md:justify-end md:items-baseline ">
+          <Image
+            src="/assets/___1_-removebg-preview.png"
+            width={212}
+            height={106}
+            alt="image"
+            class=" w-[100%] h-[100%] "
+          />
         </div>
-  </div>
+        <div class="md:flex md:flex-col md:justify-center w-[70%] px-4">
+          <h1 class="text-2xl font-bold my-2">Interactive Announcement</h1>
+          <p class="my-2 text-[15px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -129,20 +119,20 @@ const SectionCard = () => {
 
 const Section4 = () => {
   return (
-  <div class="bg-[#012d36] md:flex py-[20px] md:flex-row flex-col items-center md:justify-around px-6">
-    <div class="md:w-[95%] md:ml-8">
-      <div>
-        <h1 class="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
+    <div class="bg-[#012d36] md:flex py-[20px] md:flex-row flex-col items-center md:justify-around px-6">
+      <div class="md:w-[95%] md:ml-8">
+        <div>
+          <h1 class="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
+        </div>
+        <div>
+          <p class="text-[white] text-[10px] md:text-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p></div>
       </div>
-      <div>
-        <p class="text-[white] text-[10px] md:text-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p></div>
-      </div>  
-    <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
-      <Image src="/assets/img family.png"
-        width={285}
-        height={253}
-        className="relative top-[15px]  rounded-lg md:w-[400px] md:h-[307px]"/>
+      <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
+        <Image src="/assets/img family.png"
+          width={285}
+          height={253}
+          className="relative top-[15px]  rounded-lg md:w-[400px] md:h-[307px]" />
+      </div>
     </div>
-  </div>
   );
 };

@@ -84,7 +84,7 @@ export function Navbar() {
                             </li>
                             <li>
                                 <a
-                                    href="/register"
+                                    href="/sign-up"
                                     className="md:hidden block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 "
                                 >
                                     S&apos;inscrire
@@ -92,7 +92,7 @@ export function Navbar() {
                             </li>
                             <li>
                                 <a
-                                    href="/login"
+                                    href="/sign-in"
                                     className="md:hidden block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 "
                                 >
                                     Se connecter
@@ -102,10 +102,10 @@ export function Navbar() {
                     </div>
 
                     <div className="md:flex md:gap-3 hidden">
-                        <a href="/register">
+                        <a href="/sign-up">
                             <Button titreButton="S'inscrire" color="bg-[#22AAC6] hover:bg-[#61B3C3]" />
                         </a>
-                        <a href="/login">
+                        <a href="/sign-in">
                             <Button titreButton="Se connecter" color="bg-[#093741] hover:bg-[#35727E]" />
                         </a>
                     </div>
