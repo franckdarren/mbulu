@@ -1,13 +1,37 @@
 import Image from "next/image";
 import { Navbar } from "./_components/Navbar";
 import { Footer } from "./_components/Footer";
+import Link from "next/link";
+import { redirect, Redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs/server"
 import { Button } from "./_components/Button";
 import { MasqueCard } from "./_components/MasqueCard";
 import { workVideo } from "./_components/MasqueCard";
 
 export default function Home() {
+
+  const { userId } = auth()
+
+  if (userId) {
+    redirect("/admin/dashboard")
+  }
+
+
+
+
+
   return (
-    <main className="">
+    <main>
+      <div className="flex gap-5">
+        <Link href="/sign-in">
+          <button className="bg-blue-500 hover:bg-blue-600 rounded-md text-white p-3">Sign in</button>
+        </Link>
+        <Link href="/sign-up">
+          <button className="bg-blue-500 hover:bg-blue-600 rounded-md text-white p-3">Sign up</button>
+        </Link>
+
+      </div>
+
       <Navbar />
       <Header />
       <Section1 />
