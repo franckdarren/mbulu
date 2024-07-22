@@ -20,10 +20,23 @@ const SectionCard = () => {
 
 export default function PageCours() {
     return (
-        <main className="">
-            <Navbar />
-            <Header Image2="/assets/punu.png"  Image1="/assets/mot.gif" titreText="Punu" titreParagraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-            <CoursListe />
+        <main className="flex flex-col min-h-screen w-[100%]">
+            <div className="flex-grow">  
+                <Navbar />
+                    <div class="mt-5 flex justify-center "> 
+                        <h1 className="md:w-[70%] px-[10px] text-center text-[24px] md:text-[34px] font-bold">La méthode ludique pour apprendre une langue du Gabon</h1>
+                    </div>
+                    <div class="flex flex-col justify-center mb-2 items-center">
+                        <Image
+                            src="/assets/livre.gif"
+                            width={270}
+                            height={300}
+                            alt="image"
+                            class="rounded-lg md:w-[550px] md:h-[450px]"
+                        />
+                    </div>
+                <SectionCard />
+            </div>
             <Footer />
         </main>
     );
