@@ -16,14 +16,16 @@ datasource db {
 model User {
   id                     String         @id @default(auto()) @map("_id") @db.ObjectId
   email                  String         @unique
-  password               String
-  role                   Role
+  name                   String?
+  image                  String?
+  role                   Role           @default(USER)
   contributions          Contribution[]
-  validatedContributions Contribution[] @relation("ValidatedContributions")
+  validatedContributions Contribution[]  @relation("ValidatedContributions")
   Course                 Course[]
   Enrollment             Enrollment[]
   createdAt              DateTime       @default(now())
   updatedAt              DateTime       @updatedAt
+  clerkUserId String? @unique
 }
 
 enum Role {

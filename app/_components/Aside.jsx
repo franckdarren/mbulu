@@ -1,7 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
+import { getCountUsersFromDatabase } from "@/services/userServices";
 
 
-export function Aside() {
+
+export async function Aside() {
+
+    const usersNumber = await getCountUsersFromDatabase()
+
+
     return (
         <aside className="aside is-placed-left is-expanded">
             <div className="aside-tools">
@@ -20,40 +27,53 @@ export function Aside() {
                 <p className="menu-label">General</p>
                 <ul className="menu-list">
                     <li className="--set-active-index-html">
-                        <a href="/admin/dashboard">
-                            <span className="icon"><i className="mdi mdi-monitor-dashboard"></i></span>
-                            <span className="menu-item-label">Tableau de bord</span>
-                        </a>
+                        <Link href="/admin/dashboard" legacyBehavior>
+                            <a className="has-icon">
+                                <span className="icon"><i className="mdi mdi-monitor-dashboard"></i></span>
+                                <span className="menu-item-label">Tableau de bord</span>
+                            </a>
+                        </Link>
                     </li>
                 </ul>
                 <p className="menu-label mt-5">Contributeur</p>
                 <ul className="menu-list">
                     <li className="--set-active-tables-html">
-                        <a href="/admin/contributions">
-                            <span className="icon"><i className="mdi mdi-content-save-edit-outline"></i></span>
-                            <span className="menu-item-label">Contributions</span>
-                        </a>
+                        <Link href="/admin/contributions" legacyBehavior>
+                            <a className="has-icon">
+                                <span className="icon"><i className="mdi mdi-content-save-edit-outline"></i></span>
+                                <span className="menu-item-label">Contributions</span>
+                            </a>
+                        </Link>
                     </li>
                     <li className="--set-active-forms-html">
-                        <a href="/admin/mes-contributions">
-                            <span className="icon"><i className="mdi mdi-file-document-check-outline"></i></span>
-                            <span className="menu-item-label">Mes contributions</span>
-                        </a>
+                        <Link href="/admin/mes-contributions" legacyBehavior>
+                            <a className="has-icon">
+                                <span className="icon"><i className="mdi mdi-file-document-check-outline"></i></span>
+                                <span className="menu-item-label">Mes contributions</span>
+                            </a>
+                        </Link>
                     </li>
                 </ul>
                 <p className="menu-label mt-5">Administrateur</p>
                 <ul className="menu-list">
                     <li className="--set-active-profile-html">
-                        <a href="/admin/utilisateurs">
-                            <span className="icon"><i className="mdi mdi-account-circle"></i></span>
-                            <span className="menu-item-label">Utilisateurs</span>
-                        </a>
+                        <Link href="/admin/utilisateurs" legacyBehavior>
+                            <a className="has-icon flex items-center justify-center">
+                                <span className="icon"><i className="mdi mdi-account-circle"></i></span>
+                                <span className="menu-item-label">Utilisateurs</span>
+                                <p class="flex items-center justify-center w-5 h-5 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
+                                    {usersNumber}
+                                </p>
+                            </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/admin/contributions" className="has-icon">
-                            <span className="icon"><i className="mdi mdi-content-save-edit-outline"></i></span>
-                            <span className="menu-item-label">Contributions</span>
-                        </a>
+                        <Link href="/admin/contributions" legacyBehavior>
+                            <a className="has-icon">
+                                <span className="icon"><i className="mdi mdi-content-save-edit-outline"></i></span>
+                                <span className="menu-item-label">Contributions</span>
+                            </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

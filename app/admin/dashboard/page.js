@@ -1,8 +1,12 @@
+import AdminTitre from "@/app/_components/AdminTitre";
 
-export default function Dashboard() {
+export default async function Dashboard() {
+
     return (
         <main className="">
-            <h1>Tableau de bord</h1>
+            <AdminTitre titre="Tableau de bord" />
+
+
         </main>
     );
 }

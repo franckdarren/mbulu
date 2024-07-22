@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "./main.css";
 import '@mdi/font/css/materialdesignicons.min.css';
+import { ClerkProvider } from '@clerk/nextjs'
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,15 +13,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
-      <head>
-      </head>
-      <body className={inter.className}>
-        {children}
-        <script
-          src="../script.js" defer>
-        </script>
-      </body>
-    </html>
+    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+      <html lang="fr">
+        <body className={inter.className}>
+          {children}
+          <script
+            src="../script.js" defer>
+          </script>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

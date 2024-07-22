@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { SignOutButton } from "@clerk/nextjs";
 
-export function AdminNavbar() {
+export function AdminNavbar({ data }) {
+    console.log(data);
+
     return (
         <nav id="navbar-main" className="navbar is-fixed-top">
             <div className="navbar-brand">
@@ -24,14 +27,14 @@ export function AdminNavbar() {
                         <a className="navbar-link">
                             <div className="user-avatar">
                                 <Image
-                                    src="/assets/profil.jpg"
-                                    alt="Image de l'utilisateru"
+                                    src={data?.image}
+                                    alt="Image de l'utilisater"
                                     width={85}
                                     height={85}
                                     className="rounded-full"
                                 />
                             </div>
-                            <div className="is-user-name"><span>Franck Darren</span></div>
+                            <div className="is-user-name"><span>{data?.name}</span></div>
                             <span className="icon"><i className="mdi mdi-chevron-down"></i></span>
                         </a>
                         <div className="navbar-dropdown">
@@ -44,10 +47,12 @@ export function AdminNavbar() {
                                 <span>Notifications</span>
                             </a>
                             <hr className="navbar-divider" />
-                            <a className="navbar-item hover:bg-slate-200">
-                                <span className="icon"><i className="mdi mdi-logout"></i></span>
-                                <span>Se déconnecter</span>
-                            </a>
+                            <SignOutButton>
+                                <a className="navbar-item hover:bg-slate-200">
+                                    <span className="icon"><i className="mdi mdi-logout"></i></span>
+                                    <span>Se déconnecter</span>
+                                </a>
+                            </SignOutButton>
                         </div>
                     </div>
                 </div>
