@@ -56,7 +56,8 @@ const Section1 = () => {
           <div class="md:flex md:flex-col md:justify-center w-[70%] px-4">
             <h1 class="text-2xl font-bold my-2">Interactive Announcement</h1>
             <p class="my-2 text-[15px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper. 
+            Bienvenue sur Mbulu !
+            Nous sommes ravis de vous accueillir sur le premier dictionnaire numérique interactif dédié aux langues gabonaises. Mbulu a été conçu pour préserver et promouvoir la richesse linguistique et culturelle du Gabon. Que vous soyez un jeune Gabonais désireux de reconnecter avec vos racines ou un passionné de langues en quête de nouvelles découvertes, vous êtes au bon endroit. 
             </p>
           </div>
         </div>
@@ -68,9 +69,9 @@ const Section2 = () => {
   return (
     <div className="bg-[#03829c]">
       <Image src="/assets/WeWork — Rebecca Mock.gif"
-        width={145}
+        width={135}
         height={113}
-        className="relative left-[210px] top-[15px]  rounded-lg md:w-[284px] md:h-[152px] md:left-[60%]"
+        className="relative left-[210px] top-[15px]  rounded-lg md:w-[274px] md:h-[152px] md:left-[60%]"
       />
 
       <h3 className="my-[15px] text-center text-[#fb9600] font-semibold text-[23px] md:text-[30px]">Obtenez des traduction<br /> instantanées dans plusieurs<br />  langues gabonaises</h3>
@@ -90,7 +91,7 @@ const Section2 = () => {
 
 const SectionCard = () => {
   return (
-    <div>
+    <div className="my-[150px]">
       <h1 className="text-center text-[16px] font-normal md:text-[20px] md:font-normal md: my-[25px]">Choisir la langue</h1>
       <div className="flex flex-col items-center mt-[10px] mb-[10px] md:flex md:flex-row md:items-center md:justify-center md:gap-[15px]">
 
@@ -111,7 +112,7 @@ const Section4 = () => {
         <h1 class="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
       </div>
       <div>
-        <p class="text-[white] text-[10px] md:text-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p></div>
+        <p class="text-[white] text-[10px] md:text-[20px]"> "Mbulu" , permettant aux utilisateurs d'apprendre les langues gabonaises de manière ludique et interactive. L'application utilise des technologies modernes pour offrir une expérience utilisateur fluide et accessible, même hors ligne.</p></div>
       </div>  
     <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
       <Image src="/assets/img family.png"
