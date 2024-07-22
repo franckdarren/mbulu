@@ -144,8 +144,10 @@ const Section4 = () => {
 
 const Faqs = () => {
   return(
-    <div>
-      
+    <div class="bg-orange-600 py-8">
+      <ButtonFaqs/>
+      <ButtonFaqs/>
+      <ButtonFaqs/>
       <ButtonFaqs/>
     </div>
   )
