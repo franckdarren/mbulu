@@ -1,8 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getCountUsersFromDatabase } from "@/services/userServices";
 
 
-export function Aside() {
+
+export async function Aside() {
+
+    const usersNumber = await getCountUsersFromDatabase()
+
+
     return (
         <aside className="aside is-placed-left is-expanded">
             <div className="aside-tools">
@@ -52,18 +58,21 @@ export function Aside() {
                 <ul className="menu-list">
                     <li className="--set-active-profile-html">
                         <Link href="/admin/utilisateurs" legacyBehavior>
-                            <a className="has-icon">
+                            <a className="has-icon flex items-center justify-center">
                                 <span className="icon"><i className="mdi mdi-account-circle"></i></span>
                                 <span className="menu-item-label">Utilisateurs</span>
+                                <p class="flex items-center justify-center w-5 h-5 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
+                                    {usersNumber}
+                                </p>
                             </a>
                         </Link>
                     </li>
                     <li>
                         <Link href="/admin/contributions" legacyBehavior>
-                           <a className="has-icon">
+                            <a className="has-icon">
                                 <span className="icon"><i className="mdi mdi-content-save-edit-outline"></i></span>
                                 <span className="menu-item-label">Contributions</span>
-                           </a>
+                            </a>
                         </Link>
                     </li>
                 </ul>
