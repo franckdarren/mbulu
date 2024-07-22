@@ -1,3 +1,9 @@
+import AdminTitre from "@/app/_components/AdminTitre";
+
 export default function Contributions() {
-    return <p>Page Contributions</p>;
+    return (
+        <main>
+            <AdminTitre titre="Contributions" />
+        </main>
+    );
 }
