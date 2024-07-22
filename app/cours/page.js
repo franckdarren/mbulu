@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Navbar } from "../_components/Navbar";
 import { Footer } from "../_components/Footer";
 import { MasqueCard } from "../_components/MasqueCard";
+import { Header } from "./Header";
+import { CoursListe } from "./CoursListe";
 
 const SectionCard = () => {
     return (

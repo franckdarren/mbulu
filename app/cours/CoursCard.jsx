@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function CoursCard() {
+export function CoursCard({theme, lesson}) {
     return (
         <div class="flex flex-col justify-center items-center" >
             <div class=" rounded-[10px] w-[274px] my-5 h-[100%]" >
@@ -14,10 +14,10 @@ export function CoursCard() {
                 </div>
                 <div class="bg-[#f69f1d] p-4 rounded-b-lg w-[274px] h-[155px] ">
                     <div>
-                        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit</h3>
+                        <h3>{theme}</h3>
                     </div>
                     <div class=" h-[70px] flex flex-col justify-end items-baseline">
-                        <p>lorem ipsum</p>
+                        <p>{lesson}</p>
                     </div>
                 </div>
             </div>

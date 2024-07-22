@@ -84,10 +84,9 @@ const Section2 = () => {
   return (
     <div className="bg-[#03829c]">
       <Image src="/assets/WeWork — Rebecca Mock.gif"
-        width={145}
+        width={135}
         height={113}
         className="relative left-[210px] top-[15px]  rounded-lg md:w-[284px] md:h-[152px] md:left-[60%]"
-        alt="image"
       />
 
       <h3 className="my-[15px] text-center text-[#fb9600] font-semibold text-[23px] md:text-[30px]">Obtenez des traduction<br /> instantanées dans plusieurs<br />  langues gabonaises</h3>
@@ -123,22 +122,21 @@ const SectionCard = () => {
 
 const Section4 = () => {
   return (
-    <div class="bg-[#012d36] md:flex py-[20px] md:flex-row flex-col items-center md:justify-around px-6">
-      <div class="md:w-[95%] md:ml-8">
-        <div>
-          <h1 class="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
-        </div>
-        <div>
-          <p class="text-[white] text-[10px] md:text-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p></div>
+  <div class="bg-[#012d36] md:flex py-[20px] md:flex-row flex-col items-center md:justify-around px-6">
+    <div class="md:w-[95%] md:ml-8">
+      <div>
+        <h1 class="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
       </div>
-      <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
-        <Image src="/assets/img family.png"
-          width={285}
-          height={253}
-          className="relative top-[15px]  rounded-lg md:w-[400px] md:h-[307px]"
-          alt="image" />
-      </div>
+      <div>
+        <p class="text-[white] text-[10px] md:text-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p></div>
+      </div>  
+    <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
+      <Image src="/assets/img family.png"
+        width={285}
+        height={253}
+        className="relative top-[15px]  rounded-lg md:w-[400px] md:h-[307px]"/>
     </div>
+  </div>
   );
 };
 
