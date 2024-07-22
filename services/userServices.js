@@ -35,3 +35,23 @@ export const getUserFromDatabase = async (clerkUserId) => {
     }
 
 }
+
+export const getAllUsersFromDatabase = async () => {
+    try {
+        const users = await prisma.user.findMany();
+        return users;
+    } catch (error) {
+        console.error("Une erreur est survenue lors de la récupération de tous les utilisateurs", error);
+        throw error;
+    }
+}
+
+export const getCountUsersFromDatabase = async () => {
+    try {
+        const count = await prisma.user.count();
+        return count;
+    } catch (error) {
+        console.error("Une erreur est survenue lors de la récupération du nombre d'utilisateurs", error);
+        throw error;
+    }
+}

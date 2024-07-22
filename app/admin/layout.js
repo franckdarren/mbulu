@@ -12,7 +12,7 @@ export default async function Layout({ children }) {
     const { userId } = auth()
 
     const user = await currentUser()
-    
+
     if (!userId) {
         redirect("/")
     }
@@ -25,11 +25,11 @@ export default async function Layout({ children }) {
         const image = user.imageUrl || "";
         await addUserToDatabases(userId, name, email, image)
     }
-    
+
     const data = await getUserFromDatabase(userId)
 
     return (
-        <div className="mt-5 ml-5">
+        <div className="mt-5 mx-5">
             <Aside />
             <AdminNavbar data={data} />
             {children}
