@@ -25,10 +25,10 @@ export default async function Dashboard() {
     return (
         <main className="">
             <h1>Tableau de bord</h1>
-            <h2>Bienvenue {data?.name}</h2>
+            {/* <h2>Bienvenue {data?.name}</h2>
             <p>Email: {data.email}</p>
             <Image src={data?.image} width="200" height="200" alt="avatar" />
-            <SignOutButton />
+            <SignOutButton /> */}
         </main>
     );
 }
