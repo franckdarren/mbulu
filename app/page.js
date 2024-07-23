@@ -71,6 +71,7 @@ const Section2 = () => {
       <Image src="/assets/WeWork — Rebecca Mock.gif"
         width={145}
         height={113}
+        alt="gif"
         className="relative left-[210px] top-[15px]  rounded-lg md:w-[284px] md:h-[152px] md:left-[60%]"
       />
 
@@ -112,12 +113,13 @@ const Section4 = () => {
         <h1 class="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
       </div>
       <div>
-        <p class="text-[white] text-[10px] md:text-[20px]"> "Mbulu" , permettant aux utilisateurs d'apprendre les langues gabonaises de manière ludique et interactive. L'application utilise des technologies modernes pour offrir une expérience utilisateur fluide et accessible, même hors ligne.</p></div>
+        <p class="text-[white] text-[10px] md:text-[20px]">Mbulu, permettant aux utilisateurs d&pos;apprendre les langues gabonaises de manière ludique et interactive. L&pos;application utilise des technologies modernes pour offrir une expérience utilisateur fluide et accessible, même hors ligne.</p></div>
       </div>  
     <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
       <Image src="/assets/img family.png"
         width={285}
         height={253}
+        alt="image"
         className="relative top-[15px]  rounded-lg md:w-[400px] md:h-[307px]"/>
     </div>
   </div>
