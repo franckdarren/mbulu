@@ -95,11 +95,11 @@ export function Navbar() {
                     </div>
 
                     <div className="md:flex md:gap-3 hidden">
-                        <a className="has-icon" href="/sign-up">
+                        <a href="/sign-up">
                             <Button titreButton="S'inscrire" color="bg-[#22AAC6] hover:bg-[#61B3C3]" />
                         </a>
 
-                        <a className="has-icon" href="/sign-in">
+                        <a href="/sign-in">
                             <Button titreButton="Se connecter" color="bg-[#093741] hover:bg-[#35727E]" />
                         </a>
                     </div>
