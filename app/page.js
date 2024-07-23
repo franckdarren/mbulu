@@ -9,6 +9,8 @@ import { auth } from "@clerk/nextjs/server"
 
 export default function Home() {
 
+  //test2
+
   const { userId } = auth()
 
   if (userId) {
