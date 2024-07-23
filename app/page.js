@@ -116,7 +116,7 @@ const Section4 = () => {
         <h1 class="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
       </div>
       <div>
-        <p class="text-[white] text-[10px] md:text-[20px]">Mbulu, permettant aux utilisateurs d&pos;apprendre les langues gabonaises de manière ludique et interactive. L&pos;application utilise des technologies modernes pour offrir une expérience utilisateur fluide et accessible, même hors ligne.</p></div>
+        <p class="text-[white] text-[10px] md:text-[20px]">Mbulu, permettant aux utilisateurs d&apos;apprendre les langues gabonaises de manière ludique et interactive. L&apos;application utilise des technologies modernes pour offrir une expérience utilisateur fluide et accessible, même hors ligne.</p></div>
       </div>  
     <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
       <Image src="/assets/img family.png"
@@ -132,10 +132,10 @@ const Section4 = () => {
 const SectionFaqs = () => {
   return (
     <div class="py-9 bg-[#fb9600]">
-        <ButtonFaqs />
-        <ButtonFaqs />
-        <ButtonFaqs />
-        <ButtonFaqs />
+        <ButtonFaqs titreButtonFaqs="Qu&apos;est ce que MBULU?" paragraphFaqs="MBULU est un dictionnaire destiné à préserver et valoriser les langues et la culture gabonaises. il est conçu pour la jeunesse gabonaise ainsi que pour toute personne souhaitant apprendre une langue gabonaise." />
+        <ButtonFaqs titreButtonFaqs="A qui s&apos;adresse MBULU?" paragraphFaqs="Le dictionnaie s&apos;adresse principalement aux jeunes Gabonais âgés de 15 à 25 ans. Mais il est également ouvert à toute personne intéressée par l&apos;apprentissage des langues gabonaises."/>
+        <ButtonFaqs titreButtonFaqs="Comment puis-je contribuer à MBULU?" paragraphFaqs="Les utilisateurs peuvent suggérer, ajouter et vérifier du contenu en se connectant à leur compte sur la plateforme."/>
+        <ButtonFaqs titreButtonFaqs="Quelles langues gabonaises sont inclues dans MBULU?" paragraphFaqs="MBULU couvre un large éventail de langues gabonaises, en prenant en compte les variations régionales et dialectales."/>
     </div>
   );
 };
