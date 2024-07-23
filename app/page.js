@@ -43,6 +43,7 @@ const Header = () => {
           <h1 class="text-white md:text-[48px] text-[20px] md:leading-tight text-center">Apprendre les langues <br class="md:mt-[100px]"></br> naturellement</h1>
         </div>
         <div class="flex justify-between w-[100%]">
+        
           <a href="/cours">
             <Button titreButton="Apprendre une langue" color="bg-[#cf5500] hover:bg-[#e08e49]" />
           </a>

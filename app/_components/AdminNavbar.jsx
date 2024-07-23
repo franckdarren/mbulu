@@ -48,10 +48,10 @@ export function AdminNavbar({ data }) {
                             </a>
                             <hr className="navbar-divider" />
                             <SignOutButton>
-                                <a className="navbar-item hover:bg-slate-200">
+                                <button className="navbar-item hover:bg-slate-200">
                                     <span className="icon"><i className="mdi mdi-logout"></i></span>
                                     <span>Se déconnecter</span>
-                                </a>
+                                </button>
                             </SignOutButton>
                         </div>
                     </div>
