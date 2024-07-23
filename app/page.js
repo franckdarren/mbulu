@@ -4,6 +4,7 @@ import { Footer } from "./_components/Footer";
 import { Button } from "./_components/Button";
 import { MasqueCard } from "./_components/MasqueCard";
 import { workVideo } from "./_components/MasqueCard";
+import { ButtonFaqs } from "./_components/ButtonFaqs";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Section2 />
       <SectionCard />
       <Section4 />
+      <SectionFaqs />
       <Footer />
     </main>
   );
@@ -124,5 +126,16 @@ const Section4 = () => {
         className="relative top-[15px]  rounded-lg md:w-[400px] md:h-[307px]"/>
     </div>
   </div>
+  );
+};
+
+const SectionFaqs = () => {
+  return (
+    <div class="py-9 bg-[#fb9600]">
+        <ButtonFaqs />
+        <ButtonFaqs />
+        <ButtonFaqs />
+        <ButtonFaqs />
+    </div>
   );
 };
