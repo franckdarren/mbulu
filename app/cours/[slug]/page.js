@@ -8,7 +8,7 @@ export default function PageCours() {
     return (
         <main className="">
             <Navbar />
-            <Header image2="/assets/punu.png" image1="/assets/mot.gif" titreText="Punu" titreParagraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+            <Header image2="/assets/punu.png" image1="/assets/mot.gif" titreText="Punu" titreParagraph="Les origines des Punu sont assez controversées, mais nous pouvons retenir que les Punu viendraient de Bunguri Kassai suite à des guerres , par la suite ils ont fondé Ndunde, puis ils arrivèrent a Divenié au XV e siècle et de Diviniéils se sont séparés avec les quatre clans en prenant des trajets différents. Ils ont cohabité avec les Lumbu et les Vili. Ils trouvèrent les Lumbu sur cette région. Les Vili vinrent par la suite trouver les Lumbu et les Punu installés sur cette partie, région du mont Fuari." />
             <CoursListe />
             <Footer />
         </main>

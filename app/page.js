@@ -1,35 +1,19 @@
 import Image from "next/image";
 import { Navbar } from "./_components/Navbar";
 import { Footer } from "./_components/Footer";
-import Link from "next/link";
-import { redirect, Redirect } from "next/navigation";
-import { auth } from "@clerk/nextjs/server"
 import { Button } from "./_components/Button";
 import { MasqueCard } from "./_components/MasqueCard";
 import { workVideo } from "./_components/MasqueCard";
-import { ButtonFaqs } from "./_components/ButtonFaqs";
 
 export default function Home() {
-
-  const { userId } = auth()
-
-  if (userId) {
-    redirect("/admin/dashboard")
-  }
-
-
-
-
-
   return (
-    <main>
+    <main className="">
       <Navbar />
       <Header />
       <Section1 />
       <Section2 />
       <SectionCard />
       <Section4 />
-      <Faqs />
       <Footer />
     </main>
   );
@@ -59,24 +43,25 @@ const Header = () => {
 const Section1 = () => {
   return (
     <div class=" md:h-[400px] md:mx-[10%] bg-gradient-to-r my-7 from-orange-400 to-orange-500 rounded-xl text-white">
-      <div class="flex justify-center px-1">
-        <div class="md:h-[400px] md:flex md:flex-col md:justify-end md:items-baseline ">
-          <Image
-            src="/assets/___1_-removebg-preview.png"
-            width={212}
-            height={100}
-            alt="image"
-            class=" w-[100%] h-[100%] "
-          />
+        <div class="flex justify-center px-1">
+              <div class="md:h-[400px] md:flex md:flex-col md:justify-end md:items-baseline ">
+                <Image
+                  src="/assets/___1_-removebg-preview.png"
+                  width={212}
+                  height={106}
+                  alt="image"
+                  class=" w-[100%] h-[100%] "
+                />
+              </div>
+          <div class="md:flex md:flex-col md:justify-center w-[70%] px-4">
+            <h1 class="text-2xl font-bold my-2">Interactive Announcement</h1>
+            <p class="my-2 text-[15px]">
+            Bienvenue sur Mbulu !
+            Nous sommes ravis de vous accueillir sur le premier dictionnaire numérique interactif dédié aux langues gabonaises. Mbulu a été conçu pour préserver et promouvoir la richesse linguistique et culturelle du Gabon. Que vous soyez un jeune Gabonais désireux de reconnecter avec vos racines ou un passionné de langues en quête de nouvelles découvertes, vous êtes au bon endroit.
+            </p>
+          </div>
         </div>
-        <div class="md:flex md:flex-col md:justify-center w-[70%] px-4">
-          <h1 class="text-2xl font-bold my-2">Interactive Announcement</h1>
-          <p class="my-2 text-[15px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante.
-          </p>
-        </div>
-      </div>
-    </div>
+  </div>
   );
 };
 
@@ -84,7 +69,7 @@ const Section2 = () => {
   return (
     <div className="bg-[#03829c]">
       <Image src="/assets/WeWork — Rebecca Mock.gif"
-        width={135}
+        width={145}
         height={113}
         className="relative left-[210px] top-[15px]  rounded-lg md:w-[284px] md:h-[152px] md:left-[60%]"
       />
@@ -96,7 +81,6 @@ const Section2 = () => {
           width={145}
           height={113}
           className=" rounded-lg  mb-[10px] md:w-[207px] md:h-[150px]"
-          alt="image"
         />
 
         <Button titreButton="Essayer une traduction" color="bg-[#FB9600] hover:bg-[#f7af44]" />
@@ -107,7 +91,7 @@ const Section2 = () => {
 
 const SectionCard = () => {
   return (
-    <div className="my-[150px]">
+    <div>
       <h1 className="text-center text-[16px] font-normal md:text-[20px] md:font-normal md: my-[25px]">Choisir la langue</h1>
       <div className="flex flex-col items-center mt-[10px] mb-[10px] md:flex md:flex-row md:items-center md:justify-center md:gap-[15px]">
 
@@ -128,7 +112,7 @@ const Section4 = () => {
         <h1 class="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
       </div>
       <div>
-        <p class="text-[white] text-[10px] md:text-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p></div>
+        <p class="text-[white] text-[10px] md:text-[20px]"> "Mbulu" , permettant aux utilisateurs d'apprendre les langues gabonaises de manière ludique et interactive. L'application utilise des technologies modernes pour offrir une expérience utilisateur fluide et accessible, même hors ligne.</p></div>
       </div>  
     <div class="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
       <Image src="/assets/img family.png"
@@ -139,14 +123,3 @@ const Section4 = () => {
   </div>
   );
 };
-
-const Faqs = () => {
-  return(
-    <div class="bg-orange-600 py-8">
-      <ButtonFaqs/>
-      <ButtonFaqs/>
-      <ButtonFaqs/>
-      <ButtonFaqs/>
-    </div>
-  )
-}
