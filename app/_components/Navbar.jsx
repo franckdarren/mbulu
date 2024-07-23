@@ -50,46 +50,53 @@ export function Navbar() {
                     >
                         <ul className="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
                             <li>
-                                <Link href="/" legacyBehavior>
-                                    <a className="block py-2 px-3  text-[#093741] rounded  md:hover:bg-transparent md:border-0 md:p-0 " aria-current="page">
-                                        Accueil
-                                    </a>
-                                </Link>
+                                <a
+                                    href="/"
+                                    className="block py-2 px-3  text-[#093741] rounded  md:hover:bg-transparent md:border-0 md:p-0 "
+                                    aria-current="page"
+                                >
+                                    Accueil
+                                </a>
                             </li>
                             <li>
-                                <Link href="/dictionnaire" legacyBehavior>
-                                    <a className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 ">
-                                        Traduction
-                                    </a>
-                                </Link>
+                                <a
+                                    href="/dictionnaire"
+                                    className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                >
+                                    Traduction
+                                </a>
                             </li>
                             <li>
-                                <Link href="/cours" legacyBehavior>
-                                    <a className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 ">
-                                        Cours
-                                    </a>
-                                </Link>
+                                <a
+                                    href="/cours"
+                                    className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                >
+                                    Cours
+                                </a>
                             </li>
                             <li>
-                                <Link href="/a-propos" legacyBehavior>
-                                    <a className="block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 ">
-                                        A propos
-                                    </a>
-                                </Link>
+                                <a
+                                    href="/a-propos"
+                                    className="block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                >
+                                    A propos
+                                </a>
                             </li>
                             <li>
-                                <Link href="/sign-up" legacyBehavior>
-                                    <a className="md:hidden block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 ">
-                                        S&apos;inscrire
-                                    </a>
-                                </Link>
+                                <a
+                                    href="/sign-up"
+                                    className="md:hidden block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                >
+                                    S&apos;inscrire
+                                </a>
                             </li>
                             <li>
-                                <Link href="/sign-in" legacyBehavior>
-                                    <a className="md:hidden block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 ">
-                                        Se connecter
-                                    </a>
-                                </Link>
+                                <a
+                                    href="/sign-in"
+                                    className="md:hidden block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                >
+                                    Se connecter
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -98,7 +105,6 @@ export function Navbar() {
                         <a href="/sign-up">
                             <Button titreButton="S'inscrire" color="bg-[#22AAC6] hover:bg-[#61B3C3]" />
                         </a>
-
                         <a href="/sign-in">
                             <Button titreButton="Se connecter" color="bg-[#093741] hover:bg-[#35727E]" />
                         </a>
