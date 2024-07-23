@@ -5,6 +5,7 @@ import { Button } from "./_components/Button";
 import { MasqueCard } from "./_components/MasqueCard";
 import { workVideo } from "./_components/MasqueCard";
 import { ButtonFaqs } from "./_components/ButtonFaqs";
+import { redirect, Redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server"
 
 export default function Home() {

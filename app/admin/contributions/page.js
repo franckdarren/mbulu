@@ -36,8 +36,8 @@ export default function Contributions() {
                         <td>test</td>
                         <td className="">
                             <div className="flex items-center justify-end">
-                                <span className="text-xs text-white mx-1 p-2 rounded-md bg-[#cf5500] hover:bg-[#fb9600] flex items-center justify-center border">Modifier</span>
-                                <span className="text-xs text-white mx-1 p-2 rounded-md bg-[#cf5500] hover:bg-[#fb9600] flex items-center justify-center border">Approuver</span>
+                                <span className="text-xs text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border">Modifier</span>
+                                <span className="text-xs text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border">Approuver</span>
                             </div>
                         </td>
 
