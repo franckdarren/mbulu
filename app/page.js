@@ -106,7 +106,7 @@ const Section2 = () => {
 const SectionCard = () => {
   return (
     <div className="my-[140px]">
-      <h1 className="text-center text-[2rem] font-blod md:text-[2.5rem] md:font-blod md:my-[25px]">Choisir la langue</h1>
+      <h1 className="text-center text-[40px] font-blod md:text-[40px] md:my-[25px]">Choisir la langue</h1>
       <div className="flex flex-col items-center mt-[10px] mb-[10px] md:flex md:flex-row md:items-center md:justify-center md:gap-[15px]">
 
         <MasqueCard titre="Fang" image="/assets/masque-fang.png" />
