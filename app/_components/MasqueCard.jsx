@@ -6,14 +6,14 @@ export function MasqueCard({titre, image}) {
     return (
         <div className="md:flex flex-row">
         <Link href="/" legacyBehavior>
-            <a href=""  className="m-2 w-[140px] h-[140px] flex flex-col justify-around items-center rounded-lg shadow-lg shadow-gray-500 hover:bg-gray-200 md:w-[150px] md:h-[156px] ">
+            <a href=""  className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300 m-2 w-[220px] h-[250px] flex flex-col justify-around items-center rounded-lg bg-white shadow-lg shadow-gray-500 hover:bg-gray-200">
                 <Image src={image}
                 width={100}
                 height={100}
-                className="h-[110px] w-auto"
+                className="h-[220px] w-auto"
                 alt="image"
                 />
-                <h3 className="text-[18px] font-normal">{titre}</h3>
+                <h3 className="text-[20px] font-bold">{titre}</h3>
             </a>
         </Link>
         </div>
