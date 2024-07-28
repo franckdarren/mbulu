@@ -26,7 +26,7 @@ export default function PageCours() {
             <div className="flex-grow i bg-cover bg-center"style={{ backgroundImage: 'url(/assets/livre.gif)' }}>  
                 <Navbar />
                     <div class="mt-5 flex bg-white bg-opacity-20 justify-center "> 
-                        <h1 className="md:w-[70%] px-[10px] text-center text-[24px] md:text-[34px] font-bold">La méthode ludique pour apprendre une langue du Gabon</h1>
+                        <h1 className="md:w-[70%] px-[10px] text-[#093741] text-center text-[24px] md:text-[34px] font-bold">La méthode ludique pour apprendre une langue du Gabon</h1>
                     </div>
                     <div class="flex flex-col justify-center mb-2 items-center">
                         {/* <Image

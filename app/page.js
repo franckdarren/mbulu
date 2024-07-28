@@ -25,6 +25,7 @@ export default function Home() {
       <SectionCard />
       <Section4 />
       <SectionFaqs />
+      <SectionWhatsapp />
       <Footer />
     </main>
   );
@@ -60,7 +61,7 @@ const Section1 = () => {
         <div className="md:h-[400px] md:flex md:flex-col md:justify-end md:items-baseline">
         </div>
         <div className="md:flex md:flex-col md:justify-center w-[80%] py-2 px-3">
-          <h1 className="text-2xl font-bold my-2">Interactive Announcement</h1>
+          <h1 className="text-2xl font-bold my-2">Le Dictionnaire Numérique Interactif des Langues Gabonaises</h1>
           <p className="my-2 text-[15px]">
             Bienvenue sur Mbulu !
             Nous sommes ravis de vous accueillir sur le premier dictionnaire numérique interactif dédié aux langues gabonaises. Mbulu a été conçu pour préserver et promouvoir la richesse linguistique et culturelle du Gabon. Que vous soyez un jeune Gabonais désireux de reconnecter avec vos racines ou un passionné de langues en quête de nouvelles découvertes, vous êtes au bon endroit.
@@ -110,7 +111,6 @@ const SectionCard = () => {
         <MasqueCard titre="Fang" image="/assets/masque-fang.png" />
         <MasqueCard titre="Punu" image="/assets/masque-punu.png" />
         <MasqueCard titre="Myene" image="/assets/masque-myene.png" />
-
       </div>
     </div>
   );
@@ -147,4 +147,30 @@ const SectionFaqs = () => {
       <ButtonFaqs titreButtonFaqs="Quelles langues gabonaises sont inclues dans MBULU?" paragraphFaqs="MBULU couvre un large éventail de langues gabonaises, en prenant en compte les variations régionales et dialectales." />
     </div>
   );
+};
+
+const SectionWhatsapp = () => {
+  return (
+    <div className="py-11 my-11 bg-white  ">
+      <div className="mx-[15%] flex flex-col gap-y-6 rounded-[15px] py-4 px-2 bg-[#012d36] " >
+         <h1 className="text-center text-[white] text-[18px] font-semibold md:text-[26px]  md:my-[20px]">Découvrez la Richesse des Langues Gabonaises avec Notre Application de Traduction</h1>
+      <div >
+        
+        <p className="text-[white] text-center text-[12px] md:text-[20px]">Contactez-nous dès aujourd&apos;hui pour découvrir comment notre application peut vous aider à traduire efficacement des textes en plusieurs langues gabonaises, et à explorer la richesse linguistique du pays..</p>
+      </div>
+      <div className="flex justify-center animate-levitate items-center gap-5">
+      <Image src="/assets/whatsapp-logo.svg"
+          width={50}
+          height={50}
+          alt="image"
+          className="" />
+      <Button titreButton="Rejoindre Whatsapp" color="bg-[#fb9600] hover:bg-[#f7af44]" />
+      </div>
+        </div>
+          
+      
+    </div>
+
+        
+        );
 };

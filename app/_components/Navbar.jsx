@@ -1,9 +1,21 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/assets/logo.png";
 import { Button } from "./Button";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+    
+    const pathname  = usePathname();
+  
+    const linkClasses = (path) =>
+      pathname === path
+        ? 'block py-2 px-3 text-[#093741] rounded md:hover:bg-transparent md:border-0 md:p-0'
+        : 'block py-2 px-3 text-white md:border-0 md:hover:text-[#22AAC6] md:p-0';
+  
+   
     return (
         <div className="">
             <nav className="bg-[#D5711C]">
@@ -52,7 +64,8 @@ export function Navbar() {
                             <li>
                                 <a
                                     href="/"
-                                    className="block py-2 px-3  text-[#093741] rounded  md:hover:bg-transparent md:border-0 md:p-0 "
+                                    //className="block py-2 px-3  text-[#093741] rounded  md:hover:bg-transparent md:border-0 md:p-0 "
+                                    className={linkClasses('/')}
                                     aria-current="page"
                                 >
                                     Accueil
@@ -61,15 +74,17 @@ export function Navbar() {
                             <li>
                                 <a
                                     href="/dictionnaire"
-                                    className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
-                                >
+                                    //className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                    className={linkClasses('/dictionnaire')}
+                               >
                                     Traduction
                                 </a>
                             </li>
                             <li>
                                 <a
                                     href="/cours"
-                                    className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                    //className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                    className={linkClasses('/cours')}
                                 >
                                     Cours
                                 </a>
@@ -77,7 +92,8 @@ export function Navbar() {
                             <li>
                                 <a
                                     href="/a-propos"
-                                    className="block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 "
+                                    className={linkClasses('/a-propos')}
+                                   // className="block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 "
                                 >
                                     A propos
                                 </a>
