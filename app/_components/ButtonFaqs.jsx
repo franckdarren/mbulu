@@ -12,7 +12,7 @@ export function ButtonFaqs({titreButtonFaqs, paragraphFaqs}) {
       };
 return (
         
-    <div class="max-w-lg mx-auto p-2">
+    <div className="max-w-lg mx-auto p-2">
         <details className="groupe py-4 open:bg-[#012d36]   bg-[#012d36] open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg">
             <summary onClick={toggleOpen} className=" leading-6 text-white dark:text-white font-semibold flex w-full cursor-pointer select-none items-center justify-between text-left text-base">
             {titreButtonFaqs}
@@ -32,10 +32,10 @@ return (
     
 
     
-    //     <summary class="text-sm leading-6 text-white dark:text-white font-semibold select-none">
+    //     <summary className="text-sm leading-6 text-white dark:text-white font-semibold select-none">
     //       Why do they call it Ovaltine?
     //     </summary>
-    //     <div class="mt-3 text-sm leading-6 text-white dark:text-slate-400">
+    //     <div className="mt-3 text-sm leading-6 text-white dark:text-slate-400">
     //       <p>The mug is round. The jar is round. They should call it Roundtine.</p>
     //    
     );
