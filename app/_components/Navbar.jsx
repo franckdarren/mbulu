@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/assets/logo.png";
 import { Button } from "./Button";
+import ActiveLink from "./ActiveLink";
 
 export function Navbar() {
     return (
@@ -49,37 +50,16 @@ export function Navbar() {
                 >
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
                         <li>
-                            <a
-                                href="/"
-                                className="block py-2 px-3  text-[#093741] rounded  md:hover:bg-transparent md:border-0 md:p-0 "
-                                aria-current="page"
-                            >
-                                Accueil
-                            </a>
+                            <ActiveLink href="/">Accueil</ActiveLink>
                         </li>
                         <li>
-                            <a
-                                href="/dictionnaire"
-                                className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
-                            >
-                                Traduction
-                            </a>
+                            <ActiveLink href="/dictionnaire">Traduction</ActiveLink>
                         </li>
                         <li>
-                            <a
-                                href="/cours"
-                                className="block py-2 px-3 text-white   md:border-0 md:hover:text-[#22AAC6] md:p-0 "
-                            >
-                                Cours
-                            </a>
+                            <ActiveLink href="/cours">Cours</ActiveLink>
                         </li>
                         <li>
-                            <a
-                                href="/a-propos"
-                                className="block py-2 px-3 text-white rounded  md:border-0 md:hover:text-[#22AAC6] md:p-0 "
-                            >
-                                A propos
-                            </a>
+                            <ActiveLink href="/a-propos">A propos</ActiveLink>
                         </li>
                         <li>
                             <a

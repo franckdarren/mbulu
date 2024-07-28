@@ -61,7 +61,7 @@ export async function Aside() {
                             <a className="has-icon flex items-center justify-center">
                                 <span className="icon"><i className="mdi mdi-account-circle"></i></span>
                                 <span className="menu-item-label">Utilisateurs</span>
-                                <p class="flex items-center justify-center w-5 h-5 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
+                                <p className="flex items-center justify-center w-5 h-5 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
                                     {usersNumber}
                                 </p>
                             </a>

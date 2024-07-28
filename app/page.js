@@ -34,7 +34,7 @@ const Header = () => {
     <header className="flex items-center flex-col justify-center md:h-[628px] h-[280px] bg-cover bg-center" style={{ backgroundImage: 'url(/assets/bgheader.png)' }}>
       <div className="flex items-center flex-col">
         <div className="mb-[46px]  w-[342px] md:h-[143px] md:w-[515px] md:flex md:justify-center md:items-center md:flex-col">
-          <h1 className="text-white md:text-[48px] text-[20px] md:leading-tight text-center">Apprendre les langues <br class="md:mt-[100px]"></br> naturellement</h1>
+          <h1 className="text-white md:text-[48px] text-[20px] md:leading-tight text-center">Apprendre les langues <br className="md:mt-[100px]"></br> naturellement</h1>
         </div>
         <div className="flex justify-between w-[100%]">
 
