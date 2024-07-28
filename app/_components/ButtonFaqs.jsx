@@ -16,7 +16,7 @@ return (
         <details className="groupe py-4 open:bg-[#012d36]   bg-[#012d36] open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg">
             <summary onClick={toggleOpen} className=" leading-6 text-white dark:text-white font-semibold flex w-full cursor-pointer select-none items-center justify-between text-left text-base">
             {titreButtonFaqs}
-                <svg  className=" mt-0.5 h-8 w-8 md:w-[30px] flex-none stroke-[#61b6c7]"  fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <svg  className=" mt-0.5 h-8 w-8 md:w-[30px] flex-none stroke-[#61b6c7]"  fill="none" xmlns="http://www.w3.org/2000/svg" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <path className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}  d="M12 6v12"></path>
                     <path className="open:flex" d="M20 12H6"></path>
                 </svg>

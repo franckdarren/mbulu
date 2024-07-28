@@ -35,7 +35,7 @@ const Header = () => {
     <header className="flex items-center flex-col justify-center md:h-[628px] h-[280px] bg-cover bg-center" style={{ backgroundImage: 'url(/assets/bgheader.png)' }}>
       <div className="flex items-center flex-col">
         <div className="mb-[46px]  w-[342px] md:h-[143px] md:w-[515px] md:flex md:justify-center md:items-center md:flex-col">
-          <h1 className="text-white md:text-[48px] text-[20px] md:leading-tight text-center">Apprendre les langues <br class="md:mt-[100px]"></br> naturellement</h1>
+          <h1 className="text-white md:text-[48px] text-[20px] md:leading-tight text-center">Apprendre les langues <br className="md:mt-[100px]"></br> naturellement</h1>
         </div>
         <div className="flex justify-between w-[100%]">
 
@@ -75,7 +75,7 @@ const Section1 = () => {
 
 const Section2 = () => {
   return (
-    <div className="my-[80px] h-[300px] md:h-[400px] lg:h-[450px] lg:px-[10%] px-4 gap-1 bg-center bg-cover flex" style={{ backgroundImage: 'url(/assets/keywordSearch.gif)' }}>
+    <div className="my-[80px] justify-center h-[300px] md:h-[400px] lg:h-[450px] lg:px-[10%] px-4 gap-1 bg-center bg-cover flex" style={{ backgroundImage: 'url(/assets/keywordSearch.gif)' }}>
       {/* <Image src="/assets/WeWork — Rebecca Mock.gif"
         width={145}
         height={113}
@@ -163,7 +163,7 @@ const SectionWhatsapp = () => {
           height={50}
           alt="image"
           className="" />
-      <Button titreButton="Rejoindre Whatsapp" color="bg-[#fb9600] hover:bg-[#f7af44]" />
+      <Button titreButton="Nous contacter via Whatsapp" color="bg-[#fb9600] hover:bg-[#f7af44]" />
       </div>
         </div>
           

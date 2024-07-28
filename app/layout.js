@@ -15,11 +15,26 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <html lang="fr">
+        <head>
+          <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+            rel="stylesheet"
+          />
+          <link
+            rel="icon"
+            href="/icon"
+            type="image"
+          />
+        </head>
         <body className={inter.className}>
           {children}
           <script
             src="../script.js" defer>
           </script>
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"
+            defer
+          ></script>
         </body>
       </html>
     </ClerkProvider>
