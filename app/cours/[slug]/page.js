@@ -15,7 +15,7 @@ export default function PageCours({ params }) {
     return (
         <main className="">
             <Navbar />
-            <Header image2={langue.image} image1="/assets/mot.gif" titreText={langue.titre} titreParagraph={langue.description} />
+            <Header image2={langue.image} image1={langue.gif} titreText={langue.titre} titreParagraph={langue.description} />
             <CoursListe />
             <Footer />
         </main>
