@@ -24,6 +24,7 @@ export default function Home() {
       <SectionCard />
       <Section4 />
       <SectionFaqs />
+      <SectionWhatsapp />
       <Footer />
     </main>
   );
@@ -54,12 +55,12 @@ const Header = () => {
 const Section1 = () => {
   return (
 
-    <div className=" md:h-[400px] my-[50px] md:my-[66px]  md:mx-[10%] rounded-xl  text-white bg-cover bg-center " style={{ backgroundImage: 'url(/assets/___1_-removebg-preview.png)' }} >
+    <div className="bg-[#fb9600] md:h-[400px] my-[50px] md:my-[66px]  md:mx-[10%] rounded-xl  text-white bg-cover bg-center " style={{ backgroundImage: 'url(/assets/___1_-removebg-preview.png)' }} >
       <div className="flex rounded-[10px] bg-black bg-opacity-60 shadow-overlay justify-center px-1 relative z-10">
         <div className="md:h-[400px] md:flex md:flex-col md:justify-end md:items-baseline">
         </div>
         <div className="md:flex md:flex-col md:justify-center w-[80%] py-2 px-3">
-          <h1 className="text-2xl font-bold my-2">Interactive Announcement</h1>
+          <h1 className="text-2xl font-bold my-2">Le Dictionnaire Numérique Interactif des Langues Gabonaises</h1>
           <p className="my-2 text-[15px]">
             Bienvenue sur Mbulu !
             Nous sommes ravis de vous accueillir sur le premier dictionnaire numérique interactif dédié aux langues gabonaises. Mbulu a été conçu pour préserver et promouvoir la richesse linguistique et culturelle du Gabon. Que vous soyez un jeune Gabonais désireux de reconnecter avec vos racines ou un passionné de langues en quête de nouvelles découvertes, vous êtes au bon endroit.
@@ -74,7 +75,7 @@ const Section1 = () => {
 
 const Section2 = () => {
   return (
-    <div className="my-[80px] h-[300px] md:h-[400px] lg:h-[450px] lg:px-[10%] px-4 gap-1 bg-center bg-cover flex" style={{ backgroundImage: 'url(/assets/keywordSearch.gif)' }}>
+    <div className="my-[80px] justify-center h-[300px] md:h-[400px] lg:h-[450px] lg:px-[10%] px-4 gap-1 bg-center bg-cover flex" style={{ backgroundImage: 'url(/assets/keywordSearch.gif)' }}>
       {/* <Image src="/assets/WeWork — Rebecca Mock.gif"
         width={145}
         height={113}
@@ -95,10 +96,24 @@ const Section2 = () => {
 
         <Button titreButton="Essayer une traduction" color="bg-[#FB9600] hover:bg-[#f7af44]" />
       </div>
-
+      
     </div>
   );
 };
+
+// const SectionCard = () => {
+//   return (
+//     <div className="bg-[#fb9600] py-5 ">
+//       <h1 className="text-center text-white text-[23px] font-extrabold md:text-[30px]  md: my-[25px]">Choisir la langue</h1>
+//       <div className="flex flex-col items-center gap-5 mt-[10px] mb-[10px] md:flex md:flex-row md:items-center md:justify-center md:gap-[15px]">
+
+//         <MasqueCard titre="Fang" image="/assets/masque-fang.png" />
+//         <MasqueCard titre="Punu" image="/assets/masque-punu.png" />
+//         <MasqueCard titre="Myene" image="/assets/masque-myene.png" />
+//       </div>
+//     </div>
+//   );
+// };
 
 const Section4 = () => {
   return (
@@ -131,4 +146,30 @@ const SectionFaqs = () => {
       <ButtonFaqs titreButtonFaqs="Quelles langues gabonaises sont inclues dans MBULU?" paragraphFaqs="MBULU couvre un large éventail de langues gabonaises, en prenant en compte les variations régionales et dialectales." />
     </div>
   );
+};
+
+const SectionWhatsapp = () => {
+  return (
+    <div className="py-11 my-11 bg-white  ">
+      <div className="mx-[15%] flex flex-col gap-y-6 rounded-[15px] py-5 px-2 bg-[#012d36] " >
+         <h1 className="text-center text-[white] text-[18px] font-semibold md:text-[26px]  md:my-[20px]">Découvrez la Richesse des Langues Gabonaises avec Notre Application de Traduction</h1>
+        <div >
+        
+           <p className="text-[white] text-center text-[12px] md:text-[20px]">Contactez-nous dès aujourd&apos;hui pour découvrir comment notre application peut vous aider à traduire efficacement des textes en plusieurs langues gabonaises, et à explorer la richesse linguistique du pays..</p>
+        </div>
+      <div className="flex lg:my-[25px] justify-center animate-levitate items-center gap-5">
+      <Image src="/assets/whatsapp-logo.svg"
+          width={50}
+          height={50}
+          alt="image"
+          className="" />
+      <Button titreButton="Nous contacter via Whatsapp" color="bg-[#fb9600] hover:bg-[#f7af44]" />
+      </div>
+        </div>
+          
+      
+    </div>
+
+        
+        );
 };

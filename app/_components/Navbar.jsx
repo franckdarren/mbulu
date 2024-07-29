@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/assets/logo.png";
 import { Button } from "./Button";
 import ActiveLink from "./ActiveLink";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+   
     return (
         <nav className="bg-[#D5711C]">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
