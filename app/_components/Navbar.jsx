@@ -8,14 +8,6 @@ import ActiveLink from "./ActiveLink";
 import { usePathname } from "next/navigation";
 
 export function Navbar() {
-    
-    const pathname  = usePathname();
-  
-    const linkClasses = (path) =>
-      pathname === path
-        ? 'block py-2 px-3 text-[#093741] rounded md:hover:bg-transparent md:border-0 md:p-0'
-        : 'block py-2 px-3 text-white md:border-0 md:hover:text-[#22AAC6] md:p-0';
-  
    
     return (
         <nav className="bg-[#D5711C]">
