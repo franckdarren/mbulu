@@ -10,8 +10,6 @@ export default function PageCours({ params }) {
     const { slug } = params
     let langue = getLangueBySlug(slug)
 
-    console.log(langue);
-
     return (
         <main className="">
             <Navbar />
