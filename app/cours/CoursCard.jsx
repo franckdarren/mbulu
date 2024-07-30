@@ -1,14 +1,15 @@
 import Image from "next/image";
 
-export function CoursCard({theme, lesson}) {
+export function CoursCard({theme, lesson, ImageCours}) {
     return (
-        <div className="flex flex-col justify-center items-center" >
-            <div className=" rounded-[10px] w-[274px] my-5 h-[100%]" >
-                <div className="bg-white rounded-t-lg flex justify-center items-center">
-                    <Image src="/assets/talk.gif"
+        <div className="flex flex-col justify-center  delay-75 duration-300  hover:scale-105 items-center" >
+            <div className=" rounded-[10px] w-[274px]  my-5 h-[100%]" >
+                <div className="bg-white   rounded-t-lg flex justify-center items-center">
+                    {/* "/assets/talk.gif" */}
+                    <Image src={ImageCours}
                         width={185}
                         height={153}
-                        className="relative"
+                        className="w-full h-[220px] rounded-t-lg relative"
                         alt="image"
                     /> 
                 </div>
