@@ -1,8 +1,8 @@
+'use client'
 import Image from "next/image";
 import { SignOutButton } from "@clerk/nextjs";
 
 export function AdminNavbar({ data }) {
-    console.log(data);
 
     return (
         <nav id="navbar-main" className="navbar is-fixed-top">

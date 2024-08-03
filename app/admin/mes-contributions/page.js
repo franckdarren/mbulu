@@ -2,12 +2,49 @@
 
 import { AdminButton } from "@/app/_components/AdminButton";
 import AdminTitre from "@/app/_components/AdminTitre";
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
+import { useState, useEffect } from 'react';
+
 
 import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
-import { useState } from "react";
+
+const getStatusClass = (status) => {
+    switch (status) {
+        case 'APPROUVE':
+            return 'bg-green-100 text-green-800 border-green-400'; // Vert pour approuvé
+        case 'REJETE':
+            return 'bg-red-100 text-red-800 border-red-400'; // Rouge pour rejeté
+        case 'ENVOYE':
+            return 'bg-gray-100 text-gray-800 border-gray-400'; // Gris pour envoyé
+    }
+};
 
 export default function MesContributions() {
     const [openModal, setOpenModal] = useState(false);
+
+    const [contributions, setContributions] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchContributions = async () => {
+            try {
+                const response = await fetch('/api/contributions/user');
+                if (!response.ok) throw new Error('Failed to fetch contributions');
+                const data = await response.json();
+                setContributions(data);
+            } catch (error) {
+                console.error('Erreur lors de la récupération des contributions:', error);
+                setError(error.message);
+            }
+        };
+
+        fetchContributions();
+    }, []);
+
+    if (error) {
+        return <div>Erreur : {error}</div>;
+    }
 
     return (
         <main>
@@ -58,40 +95,53 @@ export default function MesContributions() {
                 </Modal>
             </div>
             <table className="table bg-white border">
+                {/* head */}
                 <thead>
                     <tr>
                         <th>Mot ou expression</th>
                         <th>Traduction</th>
                         <th>Status</th>
+                        <th>Contributeur</th>
                         <th>Date création</th>
-                        <th>Date modification</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div className="flex items-center gap-3">
-                                <div>
-                                    <div className="font-bold">Mbolo</div>
-                                    <div className="text-sm opacity-50">FANG</div>
+                    {/* rows */}
+                    {contributions.map((contribution) => (
+                        <tr key={contribution.id}>
+
+                            <td>
+                                <div className="flex items-center gap-3">
+                                    <div>
+                                        <div className="font-bold">{contribution.mot}</div>
+                                        <div className="text-sm opacity-50">{contribution.language.name}</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>Bonjour</td>
-                        <td>APPROUVE</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td className="">
-                            <div className="flex items-center justify-end">
-                                <span className="text-xs text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border">
-                                    Modifier
+                            </td>
+                            <td>{contribution.traduction}</td>
+                            <td>
+                                <span className={`text-xs font-medium me-2 px-2.5 py-0.5 rounded border ${getStatusClass(contribution.status)}`}>
+                                    {contribution.status}
                                 </span>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                            <td>{contribution.user.name}</td>
+                            <td>{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
+                            <td className="">
+                                <div className="flex items-center justify-end">
+                                    <span className="text-xs text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border">Modifier</span>
+                                    <span className="text-xs text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border">Approuver</span>
+                                </div>
+                            </td>
+
+
+                        </tr>
+                    ))}
                 </tbody>
+                {/* foot */}
                 <tfoot>
-                    <tr></tr>
+                    <tr>
+
+                    </tr>
                 </tfoot>
             </table>
         </main>
