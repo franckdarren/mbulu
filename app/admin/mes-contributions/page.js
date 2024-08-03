@@ -101,7 +101,6 @@ export default function MesContributions() {
                         <th>Mot ou expression</th>
                         <th>Traduction</th>
                         <th>Status</th>
-                        <th>Contributeur</th>
                         <th>Date création</th>
                     </tr>
                 </thead>
@@ -124,7 +123,6 @@ export default function MesContributions() {
                                     {contribution.status}
                                 </span>
                             </td>
-                            <td>{contribution.user.name}</td>
                             <td>{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
                             <td className="">
                                 <div className="flex items-center justify-end">
