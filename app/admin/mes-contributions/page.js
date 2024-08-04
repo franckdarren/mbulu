@@ -5,9 +5,10 @@ import AdminTitre from "@/app/_components/AdminTitre";
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { useState, useEffect } from 'react';
-
-
-import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import { Button, Label, Modal, TextInput, Textarea } from "flowbite-react";
+import { useAuth } from '@clerk/nextjs';
 
 const getStatusClass = (status) => {
     switch (status) {
@@ -17,14 +18,16 @@ const getStatusClass = (status) => {
             return 'bg-red-100 text-red-800 border-red-400'; // Rouge pour rejeté
         case 'ENVOYE':
             return 'bg-gray-100 text-gray-800 border-gray-400'; // Gris pour envoyé
+        default:
+            return '';
     }
 };
 
 export default function MesContributions() {
     const [openModal, setOpenModal] = useState(false);
-
     const [contributions, setContributions] = useState([]);
     const [error, setError] = useState(null);
+    const { userId } = useAuth();
 
     useEffect(() => {
         const fetchContributions = async () => {
@@ -42,6 +45,20 @@ export default function MesContributions() {
         fetchContributions();
     }, []);
 
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = async (data) => {
+        try {
+            const response = await axios.post('/api/add-contribution', {
+                ...data,
+                userId: userId // Assurez-vous que userId est correctement récupéré de useAuth
+            });
+            console.log('Contribution added:', response.data);
+            setOpenModal(false); // Fermer le modal après la soumission
+        } catch (error) {
+            console.error('Error adding contribution:', error.response?.data || error.message);
+        }
+    };
+
     if (error) {
         return <div>Erreur : {error}</div>;
     }
@@ -50,65 +67,78 @@ export default function MesContributions() {
         <main>
             <div className="flex justify-between items-end">
                 <AdminTitre titre="Mes contributions" />
-                <button onClick={() => setOpenModal(true)} className="p-2 mb-2 text-sm text-white rounded-md bg-[#1f2937] hover:bg-[#D5711C]" >Ajouter une contribution</button>
-                <Modal 
-                    show={openModal} 
-                    onClose={() => setOpenModal(false)}
-                >
+                <button onClick={() => setOpenModal(true)} className="p-2 mb-2 text-sm text-white rounded-md bg-[#1f2937] hover:bg-[#D5711C]">
+                    Ajouter une contribution
+                </button>
+                <Modal show={openModal} onClose={() => setOpenModal(false)}>
                     <Modal.Header>Soumettre une contribution</Modal.Header>
                     <Modal.Body>
-                        <div className="space-y-4">
+                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                             <div>
                                 <div className="mb-2 block">
                                     <Label htmlFor="text" value="Mot ou expression" />
                                 </div>
-                                <TextInput 
-                                    id="text" 
-                                    placeholder="" 
-                                    required 
+                                <TextInput
+                                    id="text"
+                                    placeholder=""
+                                    required
+                                    {...register('mot', { required: 'Ce champ est requis' })}
                                 />
+                                {errors.mot && <span className="text-red-600">{errors.mot.message}</span>}
                             </div>
                             <div>
                                 <div className="mb-2 block">
                                     <Label htmlFor="traduction" value="Traduction en francais" />
                                 </div>
-                                <TextInput 
-                                    id="traduction" 
-                                    type="text" 
-                                    required 
+                                <Textarea
+                                    id="traduction"
+                                    placeholder=""
+                                    required
+                                    rows={4}
+                                    {...register('traduction', { required: 'Ce champ est requis' })}
                                 />
+                                {errors.traduction && <span className="text-red-600">{errors.traduction.message}</span>}
                             </div>
-                            <form className="max-w-sm">
-                                <label for="langue" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selectionner la langue</label>
-                                <select id="langue" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected>Choisir la langue</option>
-                                    <option value="US">FANG</option>
-                                    <option value="CA">MYENE</option>
-                                    <option value="FR">PUNU</option>
+                            <div>
+                                <label htmlFor="langue" className="block mb-2 text-sm font-medium text-gray-900">
+                                    Sélectionner la langue
+                                </label>
+                                <select
+                                    id="langue"
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    {...register('langue', { required: 'Ce champ est requis' })}
+                                    defaultValue=""
+                                >
+                                    <option value="" disabled>Choisir la langue</option>
+                                    <option value="66ae7545c443269e80e9770e">FANG</option>
+                                    <option value="66ae757cc443269e80e9770f">MYENE</option>
+                                    <option value="66ae7588c443269e80e97710">PUNU</option>
                                 </select>
-                            </form>
-                            <button className="p-2 mb-2 text-sm text-white rounded-md bg-[#1f2937] hover:bg-[#D5711C]" >Ajouter une contribution</button>
-                            
-            
-                        </div>
+                                {errors.langue && <span className="text-red-600">{errors.langue.message}</span>}
+                            </div>
+                            <button
+                                type="submit"
+                                className="p-2 mb-2 text-sm text-[#1f2937] rounded-md bg-[#1f2937] hover:bg-[#D5711C]"
+                            >
+                                Ajouter une contribution
+                            </button>
+                        </form>
                     </Modal.Body>
                 </Modal>
             </div>
             <table className="table bg-white border">
-                {/* head */}
                 <thead>
                     <tr>
                         <th>Mot ou expression</th>
                         <th>Traduction</th>
                         <th>Status</th>
                         <th>Date création</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {/* rows */}
                     {contributions.map((contribution) => (
                         <tr key={contribution.id}>
-
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div>
@@ -130,15 +160,12 @@ export default function MesContributions() {
                                     <span className="text-xs text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border">Approuver</span>
                                 </div>
                             </td>
-
-
                         </tr>
                     ))}
                 </tbody>
-                {/* foot */}
                 <tfoot>
                     <tr>
-
+                        {/* Footer content if needed */}
                     </tr>
                 </tfoot>
             </table>
