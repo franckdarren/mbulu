@@ -10,7 +10,7 @@ export function Header({ image_gif, titreParagraph, titreText, image_langue }) {
                     <div className="text-[48px] md:text-[68px]">{titreText}</div>
                 </div>
             </div>
-            <div className="bg-[#fb9600] p-5 rounded-[20px]">
+            <div className="bg-[#fb9600] p-5 rounded-[20px] mx-5">
                 <p className="text-[20px]">{titreParagraph}</p>
             </div>
         </div>
