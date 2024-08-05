@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { Button, Label, Modal, TextInput, Textarea } from "flowbite-react";
 import { useAuth } from '@clerk/nextjs';
 import { ClipLoader } from 'react-spinners';
+import next from "next";
 
 const getStatusClass = (status) => {
     switch (status) {
@@ -34,7 +35,7 @@ export default function Contributions() {
     const fetchContributions = useCallback(async () => {
         setLoadingContributions(true); // Démarrer le chargement
         try {
-            const response = await fetch('/api/contributions/');
+            const response = await fetch('/api/contributions/', { cache: 'no-store' });
 
             if (!response.ok) throw new Error('Failed to fetch contributions');
             const data = await response.json();
