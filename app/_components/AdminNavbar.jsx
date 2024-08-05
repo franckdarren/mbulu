@@ -1,9 +1,9 @@
+'use client'
 import Image from "next/image";
 import { SignOutButton } from "@clerk/nextjs";
 
 export function AdminNavbar({ data }) {
-    console.log(data);
-
+    
     return (
         <nav id="navbar-main" className="navbar is-fixed-top">
             <div className="navbar-brand">
@@ -48,7 +48,7 @@ export function AdminNavbar({ data }) {
                             </a>
                             <hr className="navbar-divider" />
                             <SignOutButton>
-                                <button className="navbar-item hover:bg-slate-200">
+                                <button className="navbar-item hover:bg-slate-200 w-full">
                                     <span className="icon"><i className="mdi mdi-logout"></i></span>
                                     <span>Se déconnecter</span>
                                 </button>

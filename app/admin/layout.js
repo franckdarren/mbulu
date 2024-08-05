@@ -10,7 +10,7 @@ export default async function Layout({ children }) {
 
     if (!userId) {
         redirect("/");
-        return null;  // Important: avoid rendering if redirecting
+        return null;
     }
 
     const user = await currentUser();
@@ -26,7 +26,7 @@ export default async function Layout({ children }) {
 
     return (
         <div className="mt-5 mx-5">
-            <Aside />
+            <Aside data={data} />
             <AdminNavbar data={data} />
             {children}
         </div>
