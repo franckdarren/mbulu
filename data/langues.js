@@ -3,21 +3,21 @@ const langues = [
         slug: "fang",
         titre: "Fang",
         image: "/assets/masque-fang.png",
-        description: "Les Fang ou Mfan forment un groupe ethnique bantou que l’on trouve aujourd’hui en Afrique centrale, essentiellement en Guinée équatoriale, et au Gabon (province éloignée du Cameroun), mais aussi au Cameroun, et à Sao Tomé-et-Principe. Le groupe des langues fang est composé de plusieurs dialectes et créoles. Les m'fan parlent tous des langues bantoues apparentées, et, malgré quelques spécificités régionales, ils n'ont aucun mal à se comprendre entre eux",
+        description: "Le fang est une langue bantoue parlée au Gabon. Les Fangs, forment un groupe ethnique important dans les régions du Woleur-Ntem et de L'Estuaire. On les retrouvent également dans le Moyen Ogooué et dans l'Ogooué Ivindo. La langue fang est utilisée dans divers contextes sociaux et culturels, y compris les cérémonies traditionnelles, les contes et la musique.",
         gif: "/assets/fang-motion.gif",
     },
     {
         slug: "myene",
         titre: "Myene",
         image: "/assets/masque-punu.png",
-        description: "Les Myènè sont une population bantoue d'Afrique centrale établi au Gabon, sur le littoral (entre Libreville et la lagune Fernan Vaz) et le long de l'Ogooué jusqu'à Lambaréné. Il s'agit en fait d'un ensemble de six ethnies parlant la même langue bantoue, le myènè. Ils se dénomment eux-mêmes les Ngwè-Myènè. Les Ngwè-Myènè rassemblent ainsi les Mpongwè, les Orungu, les Galwas, les Enenga, les Nkomi et les Adyumbas.",
+        description: "La langue Myènè est parlée le long de la côte gabonaise, notamment dans les régions de l'Estuaire, de l'Ogooué-Maritime, et du Moyen-Ogooué. On retrouve la population Myènè sur le littoral (entre Libreville et la lagune Fernan Vaz) et le long de l'Ogooué jusqu'à Lambaréné. Il s'agit en fait d'un ensemble de plusieurs ethnies (Mpongwè, les Orungu, les Galwas, les Enenga, les Nkomi et les Adyumbas...) parlant la même langue.",
         gif: "/assets/myene-motion.gif",
     },
     {
         slug: "punu",
         titre: "Punu",
         image: "/assets/masque-myene.png",
-        description: "Les origines des Punu sont assez controversées, mais nous pouvons retenir que les Punu viendraient de Bunguri Kassai suite à des guerres, par la suite ils ont fondé Ndunde, puis ils arrivèrent a Divenié au XV e siècle et de Diviniéils se sont séparés avec les quatre clans en prenant des trajets différents. Ils ont cohabité avec les Lumbu et les Vili. Ils trouvèrent les Lumbu sur cette région. Les Vili vinrent par la suite trouver les Lumbu et les Punu installés sur cette partie, région du mont Fuari",
+        description: "Le punu est une langue bantoue parlée au Gabon, principalement par le peuple Punu, qui réside principalement dans les provinces de la Ngounié et de la Nyanga au sud du pays. Les locuteurs du punu utilisent leur langue dans divers contextes culturels et sociaux, y compris les cérémonies traditionnelles, les chants, et les contes. Le punu a plusieurs dialectes, ce qui reflète la diversité au sein de la communauté Punu.",
         gif: "/assets/mot.gif",
     }
 ]
