@@ -28,12 +28,14 @@ export default function Contributions() {
     const [loadingSubmit, setLoadingSubmit] = useState(false); // État de chargement de la soumission
     const [loadingApprove, setLoadingApprove] = useState({}); // État de chargement de l'approbation
 
+    const { userId } = useAuth();
 
-    // Recupérer les contributions de l'utilisateur connecté
+    // Recupérer les contributions
     const fetchContributions = useCallback(async () => {
         setLoadingContributions(true); // Démarrer le chargement
         try {
             const response = await fetch('/api/contributions/');
+
             if (!response.ok) throw new Error('Failed to fetch contributions');
             const data = await response.json();
             setContributions(data);
@@ -55,7 +57,8 @@ export default function Contributions() {
         try {
             const response = await axios.post('/api/update-contribution-status', {
                 contributionId,
-                newStatus: 'APPROUVE'
+                newStatus: 'APPROUVE',
+                userId: userId
             });
             console.log('Contribution approved:', response.data);
             fetchContributions(); // Assurez-vous que fetchContributions est bien appelé et attend la réponse
@@ -81,18 +84,19 @@ export default function Contributions() {
                 <table className="table bg-white border">
                     <thead>
                         <tr>
-                            <th>Mot ou expression</th>
-                            <th>Traduction</th>
-                            <th>Status</th>
-                            <th>Date création</th>
-                            <th>Contributeur</th>
-                            <th>Actions</th>
+                            <th className="text-[15px] ">Mot ou expression</th>
+                            <th className="text-[15px] ">Traduction</th>
+                            <th className="text-[15px] ">Status</th>
+                            <th className="text-[15px] ">Date création</th>
+                            <th className="text-[15px] ">Contributeur</th>
+                            <th className="text-[15px] ">Approuvé par </th>
+                            <th className="text-[15px] ">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {contributions.map((contribution) => (
                             <tr key={contribution.id}>
-                                <td>
+                                <td className="text-[15px] ">
                                     <div className="flex items-center gap-3">
                                         <div>
                                             <div className="font-bold">{contribution.mot}</div>
@@ -100,18 +104,23 @@ export default function Contributions() {
                                         </div>
                                     </div>
                                 </td>
-                                <td>{contribution.traduction}</td>
+                                <td className="text-[15px] ">{contribution.traduction}</td>
                                 <td>
-                                    <span className={`text-xs font-medium me-2 px-2.5 py-0.5 rounded border ${getStatusClass(contribution.status)}`}>
+                                    <span className={`text-[10px] font-medium me-2 px-2.5 py-0.5 rounded border ${getStatusClass(contribution.status)}`}>
                                         {contribution.status}
                                     </span>
                                 </td>
-                                <td>{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
-                                <td>{contribution.user.name}</td>
+                                <td className="text-[15px] ">{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
+                                <td className="text-[15px] ">{contribution.user.name}</td>
+                                <td className="text-[15px] ">
+                                    {contribution.validator && (
+                                        <p>{contribution.validator.name}</p>
+                                    )}
+                                </td>
                                 <td className="">
                                     <div className="flex items-center justify-end">
                                         <span
-                                            className="text-xs text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
+                                            className="text-[12px] text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
                                         >
                                             Modifier
                                         </span>
@@ -119,7 +128,7 @@ export default function Contributions() {
                                         {contribution.status !== 'APPROUVE' && contribution.status !== 'REJETE' && (
                                             <span
                                                 onClick={() => handleApprove(contribution.id)}
-                                                className="text-xs text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
+                                                className="text-[12px] text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
                                             >
                                                 {loadingApprove[contribution.id] ? <ClipLoader size={15} color={"#ffffff"} /> : "Approuver"}
                                             </span>

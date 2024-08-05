@@ -167,17 +167,17 @@ export default function MesContributions() {
                 <table className="table bg-white border">
                     <thead>
                         <tr>
-                            <th>Mot ou expression</th>
-                            <th>Traduction</th>
-                            <th>Status</th>
-                            <th>Date création</th>
-                            <th className="flex justify-end">Actions</th>
+                            <th className="text-[15px] ">Mot ou expression</th>
+                            <th className="text-[15px] ">Traduction</th>
+                            <th className="text-[15px] ">Status</th>
+                            <th className="text-[15px] ">Date création</th>
+                            <th className="text-[15px] flex justify-end">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {contributions.map((contribution) => (
                             <tr key={contribution.id}>
-                                <td>
+                                <td className="text-[15px]">
                                     <div className="flex items-center gap-3">
                                         <div>
                                             <div className="font-bold">{contribution.mot}</div>
@@ -185,17 +185,17 @@ export default function MesContributions() {
                                         </div>
                                     </div>
                                 </td>
-                                <td>{contribution.traduction}</td>
-                                <td>
-                                    <span className={`text-xs font-medium me-2 px-2.5 py-0.5 rounded border ${getStatusClass(contribution.status)}`}>
+                                <td className="text-[15px]">{contribution.traduction}</td>
+                                <td className="text-[15px]">
+                                    <span className={`text-[10px] font-medium me-2 px-2.5 py-0.5 rounded border ${getStatusClass(contribution.status)}`}>
                                         {contribution.status}
                                     </span>
                                 </td>
-                                <td>{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
+                                <td className="text-[15px]">{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
                                 <td className="">
                                     <div className="flex items-center justify-end">
                                         <span
-                                            className="text-xs text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
+                                            className="text-[12px] text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
                                         >
                                             Modifier
                                         </span>
