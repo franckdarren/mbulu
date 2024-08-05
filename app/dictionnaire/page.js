@@ -18,9 +18,11 @@ function Dropdown({ selectedOption, handleChange }) {
                 value={selectedOption}
                 onChange={handleChange}
             > 
-                <option value="FrancaisPunu">Français - Punu</option> 
                 <option value="FrancaisFang">Français - Fang</option> 
                 <option value="FrancaisMyene">Français - Myene</option> 
+                <option value="FrancaisPunu">Français - Punu</option> 
+             
+                
             </select>
         </div>
     );
@@ -53,7 +55,7 @@ export default function PageDictionnaire() {
                         <Search />
                     </div>
                     <div className="bg-[#FB9600] w-full pl-[20px] mt-[30px]">
-                        Dictionnaire {selectedOption.split("-")[0].trim()}
+                        Dictionnaire {selectedOption.split("-")[0]}
                     </div>
                 </div>
             </div>
