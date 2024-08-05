@@ -24,6 +24,9 @@ export async function GET(req, res) {
             where: {
                 userId: user.id, // Restriction des contributions à l'utilisateur connecté
             },
+            orderBy: {
+                createdAt: 'desc',
+            },
             include: {
                 user: true, // Inclut les données de l'utilisateur associé
                 language: true, // Inclut les données de la langue associée
