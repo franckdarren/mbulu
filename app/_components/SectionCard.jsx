@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MasqueCard } from "./MasqueCard";
-import { getAllLangues } from "@/services/langueServices";
+import { getAllLangues } from "../../services/langueServices";
 
 export function SectionCard() {
 

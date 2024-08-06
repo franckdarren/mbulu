@@ -2,7 +2,7 @@
 
 import { Navbar } from "../../../_components/Navbar";
 import { Footer } from "../../../_components/Footer";
-import WordList from "@/app/_components/WordList";
+import {WordList} from "../../../_components/WordList";
 
 export default function Cours() {
   return (

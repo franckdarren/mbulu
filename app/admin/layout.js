@@ -3,7 +3,7 @@ import { Aside } from "../_components/Aside";
 import "../main.css";
 import { redirect } from "next/navigation";
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { addUserToDatabases, getUserFromDatabase } from "@/services/userServices";
+import { addUserToDatabases, getUserFromDatabase } from "../../services/userServices";
 
 export default async function Layout({ children }) {
     const { userId } = auth();
