@@ -10,8 +10,6 @@ export async function Aside({ data }) {
     const usersCount = await getCountUsersFromDatabase();
     const contributionsCount = await getCountContributionFromDatabase();
     const contributionsUserCount = await getCountContributionUserFromDatabase(data);
-    console.log(data);
-
 
     return (
         <aside className="aside is-placed-left is-expanded">
