@@ -24,6 +24,14 @@ export default async function Layout({ children }) {
 
     const data = await getUserFromDatabase(userId);
 
+
+    // if (data.role === 'USER') {
+    //     redirect("/admin/cours");
+    // } else {
+    //     redirect("/admin/dashboard");
+    // }
+
+
     return (
         <div className="mt-5 mx-5">
             <Aside data={data} />

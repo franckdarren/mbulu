@@ -12,7 +12,7 @@ export default function Home() {
   const { userId } = auth()
 
   if (userId) {
-    redirect("/admin/dashboard")
+    redirect("/admin/cours")
   }
 
   return (
@@ -96,7 +96,7 @@ const Section2 = () => {
 
         <Button titreButton="Essayer une traduction" color="bg-[#FB9600] hover:bg-[#f7af44]" />
       </div>
-      
+
     </div>
   );
 };
@@ -152,24 +152,24 @@ const SectionWhatsapp = () => {
   return (
     <div className="py-11 my-11 bg-white  ">
       <div className="mx-[15%] flex flex-col gap-y-6 rounded-[15px] py-5 px-2 bg-[#012d36] " >
-         <h1 className="text-center text-[white] text-[18px] font-semibold md:text-[26px]  md:my-[20px]">Découvrez la Richesse des Langues Gabonaises avec Notre Application de Traduction</h1>
+        <h1 className="text-center text-[white] text-[18px] font-semibold md:text-[26px]  md:my-[20px]">Découvrez la Richesse des Langues Gabonaises avec Notre Application de Traduction</h1>
         <div >
-        
-           <p className="text-[white] text-center text-[12px] md:text-[20px]">Contactez-nous dès aujourd&apos;hui pour découvrir comment notre application peut vous aider à traduire efficacement des textes en plusieurs langues gabonaises, et à explorer la richesse linguistique du pays..</p>
+
+          <p className="text-[white] text-center text-[12px] md:text-[20px]">Contactez-nous dès aujourd&apos;hui pour découvrir comment notre application peut vous aider à traduire efficacement des textes en plusieurs langues gabonaises, et à explorer la richesse linguistique du pays..</p>
         </div>
-      <div className="flex lg:my-[25px] justify-center animate-levitate items-center gap-5">
-      <Image src="/assets/whatsapp-logo.svg"
-          width={50}
-          height={50}
-          alt="image"
-          className="" />
-      <Button titreButton="Nous contacter via Whatsapp" color="bg-[#fb9600] hover:bg-[#f7af44]" />
+        <div className="flex lg:my-[25px] justify-center animate-levitate items-center gap-5">
+          <Image src="/assets/whatsapp-logo.svg"
+            width={50}
+            height={50}
+            alt="image"
+            className="" />
+          <Button titreButton="Nous contacter via Whatsapp" color="bg-[#fb9600] hover:bg-[#f7af44]" />
+        </div>
       </div>
-        </div>
-          
-      
+
+
     </div>
 
-        
-        );
+
+  );
 };
