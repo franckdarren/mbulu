@@ -10,8 +10,6 @@ export async function Aside({ data }) {
     const usersCount = await getCountUsersFromDatabase();
     const contributionsCount = await getCountContributionFromDatabase();
     const contributionsUserCount = await getCountContributionUserFromDatabase(data);
-    console.log(data);
-
 
     return (
         <aside className="aside is-placed-left is-expanded">
@@ -64,15 +62,15 @@ export async function Aside({ data }) {
                     {(data.role === "ADMIN" || data.role === "CONTRIBUTOR") && (
                         <>
                             <li className="--set-active-tables-html">
-                                <Link href="/admin/contributions" legacyBehavior>
-                                    <a className="has-icon flex items-center justify-center">
-                                        <span className="icon"><i className="mdi mdi-format-list-bulleted-square"></i></span>
-                                        <span className="menu-item-label">Contributions</span>
-                                        <p className="flex items-center justify-center w-5 h-5 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
-                                            {contributionsCount}
-                                        </p>
-                                    </a>
-                                </Link>
+                                {/* <Link legacyBehavior> */}
+                                <a href="/admin/contributions" className="has-icon flex items-center justify-center">
+                                    <span className="icon"><i className="mdi mdi-format-list-bulleted-square"></i></span>
+                                    <span className="menu-item-label">Contributions</span>
+                                    <p className="flex items-center text-[9px] justify-center w-6 h-5 font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
+                                        {contributionsCount}
+                                    </p>
+                                </a>
+                                {/* </Link> */}
                             </li>
                         </>
                     )}
@@ -81,7 +79,7 @@ export async function Aside({ data }) {
                             <a className="has-icon flex items-center justify-center">
                                 <span className="icon"><i className="mdi mdi-file-document-check-outline"></i></span>
                                 <span className="menu-item-label">Mes contributions</span>
-                                <p className="flex items-center justify-center w-5 h-5 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
+                                <p className="flex items-center text-[9px] justify-center w-6 h-5 font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
                                     {contributionsUserCount}
                                 </p>
                             </a>
@@ -100,7 +98,7 @@ export async function Aside({ data }) {
                                     <a className="has-icon flex items-center justify-center">
                                         <span className="icon"><i className="mdi mdi-account-circle"></i></span>
                                         <span className="menu-item-label">Utilisateurs</span>
-                                        <p className="flex items-center justify-center w-5 h-5 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
+                                        <p className="flex items-center text-[9px] px-2 justify-center w-6 h-5 font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
                                             {usersCount}
                                         </p>
                                     </a>
