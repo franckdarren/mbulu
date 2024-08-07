@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export function Search() {
     return (
-        <div className=" flex flex-row">
-            <input type="text" name="" id="" className="border border-black w-[200px] rounded-l-lg md:w-full peer"/> 
+        <div className=" flex">
+            <input type="text" name="" id="" className="border border-black w-[200px] rounded-l-lg md:w-full md:max-w-[600px]"/> 
             <Image
             src="/assets/tabler_search.svg"
             alt=""
