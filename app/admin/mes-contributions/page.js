@@ -29,6 +29,7 @@ export default function MesContributions() {
     const [loadingContributions, setLoadingContributions] = useState(true); // État de chargement des contributions
     const [loadingSubmit, setLoadingSubmit] = useState(false); // État de chargement de la soumission
     const [loadingApprove, setLoadingApprove] = useState({}); // État de chargement de l'approbation
+    const [selectedContribution, setSelectedContribution] = useState(null); // État pour la contribution sélectionnée
 
     const { userId } = useAuth();
 
@@ -53,23 +54,46 @@ export default function MesContributions() {
     }, [fetchContributions]);
 
     // Ajouter une contribution
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors }, setValue } = useForm();
     const onSubmit = async (data) => {
-        setLoadingSubmit(true); // Démarrer le chargement de la soumission
+        setLoadingSubmit(true);
         try {
-            const response = await axios.post('/api/add-contribution', {
-                ...data,
-                userId: userId // Assurez-vous que userId est correctement récupéré de useAuth
-            });
-            console.log('Contribution added:', response.data);
-            setOpenModal(false); // Fermer le modal après la soumission
-            fetchContributions(); // Recharger les contributions après ajout
-            reset(); // Vider les champs après ajout
+            let response;
+            if (selectedContribution) {
+                // Mise à jour de la contribution existante
+                response = await axios.put('/api/update-contribution', {
+                    ...data,
+                    userId: userId,
+                    contributionId: selectedContribution.id,
+                });
+
+                console.log('Contribution updated:', response.data);
+            } else {
+                // Ajout d'une nouvelle contribution
+                response = await axios.post('/api/add-contribution', {
+                    ...data,
+                    userId: userId,
+                });
+                console.log('Contribution added:', response.data);
+            }
+            setOpenModal(false);
+            fetchContributions();
+            reset();
+            setSelectedContribution(null); // Réinitialiser après la soumission
         } catch (error) {
-            console.error('Error adding contribution:', error.response?.data || error.message);
+            console.error('Error adding/updating contribution:', error.response?.data || error.message);
         } finally {
-            setLoadingSubmit(false); // Arrêter le chargement de la soumission
+            setLoadingSubmit(false);
         }
+    };
+
+    // Ouvrir le modal pour modification
+    const openEditModal = (contribution) => {
+        setSelectedContribution(contribution);
+        setValue('mot', contribution.mot);
+        setValue('traduction', contribution.traduction);
+        setValue('langue', contribution.langue);
+        setOpenModal(true);
     };
 
     // Approuver une contribution
@@ -102,8 +126,8 @@ export default function MesContributions() {
                 <button onClick={() => setOpenModal(true)} className="p-2 mb-2 text-sm text-white rounded-md bg-[#1f2937] hover:bg-[#D5711C]">
                     Ajouter une contribution
                 </button>
-                <Modal show={openModal} onClose={() => setOpenModal(false)}>
-                    <Modal.Header>Soumettre une contribution</Modal.Header>
+                <Modal show={openModal} onClose={() => { setOpenModal(false); setSelectedContribution(null); }}>
+                    <Modal.Header>{selectedContribution ? 'Modifier la contribution' : 'Soumettre une contribution'}</Modal.Header>
                     <Modal.Body>
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                             <div>
@@ -120,7 +144,7 @@ export default function MesContributions() {
                             </div>
                             <div>
                                 <div className="mb-2 block">
-                                    <Label htmlFor="traduction" value="Traduction en francais" />
+                                    <Label htmlFor="traduction" value="Traduction en français" />
                                 </div>
                                 <Textarea
                                     id="traduction"
@@ -139,7 +163,7 @@ export default function MesContributions() {
                                     id="langue"
                                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                     {...register('langue', { required: 'Ce champ est requis' })}
-                                    defaultValue=""
+                                    defaultValue={selectedContribution?.langue || ""}
                                 >
                                     <option value="" disabled>Choisir la langue</option>
                                     <option value="66ae7545c443269e80e9770e">FANG</option>
@@ -151,9 +175,9 @@ export default function MesContributions() {
                             <button
                                 type="submit"
                                 className="p-2 mb-2 text-sm text-[#1f2937] rounded-md bg-[#1f2937] hover:bg-[#D5711C]"
-                                disabled={loadingSubmit} // Désactiver le bouton pendant le chargement
+                                disabled={loadingSubmit}
                             >
-                                {loadingSubmit ? <ClipLoader size={20} color={"#1f2937"} /> : "Ajouter une contribution"}
+                                {loadingSubmit ? <ClipLoader size={20} color={"#1f2937"} /> : selectedContribution ? "Modifier" : "Ajouter une contribution"}
                             </button>
                         </form>
                     </Modal.Body>
@@ -195,6 +219,7 @@ export default function MesContributions() {
                                 <td className="">
                                     <div className="flex items-center justify-end">
                                         <span
+                                            onClick={() => openEditModal(contribution)}
                                             className="text-[12px] text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
                                         >
                                             Modifier
