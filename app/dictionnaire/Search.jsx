@@ -10,7 +10,7 @@ export function Search() {
             alt=""
             width={30}
             height={30}
-            className="h-auto border border-black bg-[#164048] rounded-r-lg"
+            className="h-auto w-10 p-1 border border-black bg-[#164048] rounded-r-lg"
             />
             
             

@@ -36,10 +36,10 @@ export default function PageDictionnaire() {
     setSelectedOption(e.target.value);
   };
   return (
-    <main className="">
+    <main className="h-[100vh] flex flex-col">
       <Navbar />
 
-      <div className="flex justify-center py-[20px]">
+      <div className="flex h-[100%] justify-center py-[20px]">
         <Image
           src="/assets/Group 1.svg"
           alt="logo"
@@ -58,16 +58,16 @@ export default function PageDictionnaire() {
           </div>
         </div>
       </div>
-      <div className="bg-[#FB9600] md:text-[20px] w-full py-4 pl-6">
+      <div className="bg-[#FB9600] md:text-[20px] w-full py-3 pl-6">
         Dictionnaire {selectedOption}
       </div>
-      <div className="bg-[#FFFE00] md:flex md:justify-around">
+      <div className=" md:flex md:justify-around">
         <Dictionnaire titre="Bonjour" text="Marambura" other="Lorem" />
         <Image
           src="/assets/dico.gif"
           alt="logo"
-          width={200}
-          height={168}
+          width={250}
+          height={50}
           className=""
         />
       </div>
