@@ -1,5 +1,5 @@
 'use client';
-import AdminTitre from "@/app/_components/AdminTitre";
+import AdminTitre from "../../_components/AdminTitre";
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { useState, useEffect, useCallback } from 'react';

@@ -1,4 +1,4 @@
-import AdminTitre from "@/app/_components/AdminTitre";
+import AdminTitre from "../../../app/_components/AdminTitre";
 
 export default async function Dashboard() {
 

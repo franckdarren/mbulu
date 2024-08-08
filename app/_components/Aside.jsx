@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getCountUsersFromDatabase } from "@/services/userServices";
-import { getCountContributionFromDatabase, getCountContributionUserFromDatabase } from "@/services/contributionServices";
+import { getCountUsersFromDatabase } from "../../services/userServices";
+import { getCountContributionFromDatabase, getCountContributionUserFromDatabase } from "../../services/contributionServices";
 
 
 

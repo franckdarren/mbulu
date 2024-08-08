@@ -1,7 +1,7 @@
 "use client";
 
-import { AdminButton } from "@/app/_components/AdminButton";
-import AdminTitre from "@/app/_components/AdminTitre";
+// import { AdminButton } from "../../_components/AdminButton";
+import AdminTitre from "../../_components/AdminTitre";
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { useState, useEffect, useCallback } from 'react';

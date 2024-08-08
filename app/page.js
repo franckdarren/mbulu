@@ -75,7 +75,7 @@ const Section1 = () => {
 
 const Section2 = () => {
   return (
-    <div className="my-[80px] justify-center h-[300px] md:h-[400px] lg:h-[450px] lg:px-[10%] px-4 gap-1 bg-center bg-cover flex" style={{ backgroundImage: 'url(/assets/keywordSearch.gif)' }}>
+    <div className="my-11 py-8 justify-center h-[300px] md:h-[400px] lg:h-[450px] lg:px-[10%] px-4 gap-1 bg-center bg-cover flex" style={{ backgroundImage: 'url(/assets/keywordSearch.gif)' }}>
       {/* <Image src="/assets/WeWork — Rebecca Mock.gif"
         width={145}
         height={113}
@@ -101,23 +101,10 @@ const Section2 = () => {
   );
 };
 
-// const SectionCard = () => {
-//   return (
-//     <div className="bg-[#fb9600] py-5 ">
-//       <h1 className="text-center text-white text-[23px] font-extrabold md:text-[30px]  md: my-[25px]">Choisir la langue</h1>
-//       <div className="flex flex-col items-center gap-5 mt-[10px] mb-[10px] md:flex md:flex-row md:items-center md:justify-center md:gap-[15px]">
-
-//         <MasqueCard titre="Fang" image="/assets/masque-fang.png" />
-//         <MasqueCard titre="Punu" image="/assets/masque-punu.png" />
-//         <MasqueCard titre="Myene" image="/assets/masque-myene.png" />
-//       </div>
-//     </div>
-//   );
-// };
 
 const Section4 = () => {
   return (
-    <div className="bg-[#012d36] md:flex py-[20px] mt-[100px] md:flex-row flex-col items-center md:justify-around px-6">
+    <div className="bg-[#012d36] md:flex py-11 mt-[100px] md:flex-row flex-col items-center md:justify-around px-6">
       <div className="md:w-[95%] md:ml-8">
         <div>
           <h1 className="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
@@ -150,7 +137,7 @@ const SectionFaqs = () => {
 
 const SectionWhatsapp = () => {
   return (
-    <div className="py-11 my-11 bg-white  ">
+    <div className="py-11 bg-white  ">
       <div className="mx-[15%] flex flex-col gap-y-6 rounded-[15px] py-5 px-2 bg-[#012d36] " >
         <h1 className="text-center text-[white] text-[18px] font-semibold md:text-[26px]  md:my-[20px]">Découvrez la Richesse des Langues Gabonaises avec Notre Application de Traduction</h1>
         <div >
