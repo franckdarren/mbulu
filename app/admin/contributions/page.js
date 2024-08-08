@@ -35,7 +35,7 @@ export default function Contributions() {
     const fetchContributions = useCallback(async () => {
         setLoadingContributions(true); // Démarrer le chargement
         try {
-            const response = await fetch('/api/contributions/', { next: { revalidate: 120 } });
+            const response = await fetch('/api/contributions/');
 
             if (!response.ok) throw new Error('Failed to fetch contributions');
             const data = await response.json();
