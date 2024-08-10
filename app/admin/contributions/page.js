@@ -149,4 +149,3 @@ export default function Contributions() {
         </main>
     );
 }
-export const revalidate = 0
