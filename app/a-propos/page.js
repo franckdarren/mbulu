@@ -13,8 +13,8 @@ export default function Apropos() {
                 </div>
                 <div className="flex md:flex-row flex-col justify-center items-center px-2 my-4">
                     <div className="px-[7%] md:px-[2%] md:w-[750px]">
-                        <h1 className="text-[20px] md:text-[40px] font-bold">Notre Histoire</h1>
-                        <p className="md:text-[18px]">Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p>
+                        <h1 className="text-[20px] md:text-[40px] font-bold">MBULU</h1>
+                        <p className="md:text-[18px]">Une application permettant aux gabonais de renouer avec les langues de ses ancetres rite coutume et tradition.</p>
                     </div>
                     <div className="md:bg-black">
                         <Image
@@ -30,7 +30,7 @@ export default function Apropos() {
                 <div className="bg-[#012d36] p-2 md:flex flex-col justify-center items-center gap-7">
                     <div className="px-[7%] mt-4 flex flex-col items-center justify-center md:px-[2%] md:w-[750px]">
                         <h1 className="text-[20px] text-white md:text-[40px] font-bold">Notre Equipe</h1>
-                        <p className="md:text-[18px] text-white text-center">Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Pellentesque eget venenatis purus. Nullam vitae lacus sit amet eros vestibulum ullamcorper.</p>
+                        <p className="md:text-[18px] text-white text-center"> </p>
                     </div>
                     <div className=" md:grid md:grid-cols-3 ">
                         <div className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300 mt-8 flex flex-col justify-center items-center">
