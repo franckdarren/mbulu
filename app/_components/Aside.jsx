@@ -47,7 +47,7 @@ export async function Aside({ data }) {
                     <p className="menu-label mt-5">Apprendre une langue</p>
                     <ul className="menu-list">
                         <li className="--set-active-index-html">
-                            <Link href="/admin/dashboard" legacyBehavior>
+                            <Link href="/admin/cours" legacyBehavior>
                                 <a className="has-icon">
                                     <span className="icon"><i className="mdi mdi-school"></i></span>
                                     <span className="menu-item-label">Cours</span>
@@ -57,10 +57,11 @@ export async function Aside({ data }) {
                     </ul>
                 </>
 
-                <p className="menu-label mt-5">Dictionnaire</p>
                 <ul className="menu-list">
                     {(data.role === "ADMIN" || data.role === "CONTRIBUTOR") && (
                         <>
+                            <p className="menu-label mt-5">Dictionnaire</p>
+
                             <li className="--set-active-tables-html">
                                 {/* <Link legacyBehavior> */}
                                 <a href="/admin/contributions" className="has-icon flex items-center justify-center">
@@ -72,19 +73,20 @@ export async function Aside({ data }) {
                                 </a>
                                 {/* </Link> */}
                             </li>
+                            <li className="--set-active-forms-html">
+                                <Link href="/admin/mes-contributions" legacyBehavior>
+                                    <a className="has-icon flex items-center justify-center">
+                                        <span className="icon"><i className="mdi mdi-file-document-check-outline"></i></span>
+                                        <span className="menu-item-label">Mes contributions</span>
+                                        <p className="flex items-center text-[9px] justify-center w-6 h-5 font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
+                                            {contributionsUserCount}
+                                        </p>
+                                    </a>
+                                </Link>
+                            </li>
                         </>
                     )}
-                    <li className="--set-active-forms-html">
-                        <Link href="/admin/mes-contributions" legacyBehavior>
-                            <a className="has-icon flex items-center justify-center">
-                                <span className="icon"><i className="mdi mdi-file-document-check-outline"></i></span>
-                                <span className="menu-item-label">Mes contributions</span>
-                                <p className="flex items-center text-[9px] justify-center w-6 h-5 font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
-                                    {contributionsUserCount}
-                                </p>
-                            </a>
-                        </Link>
-                    </li>
+
                 </ul>
 
 
