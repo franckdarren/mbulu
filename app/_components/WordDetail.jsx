@@ -1,6 +1,5 @@
 // components/ImageDisplay.js
 import { useState } from "react";
-import { useEffect } from "react";
 import { useRef } from "react";
 import Image from "next/image";
 
@@ -57,36 +56,17 @@ const details = {
 };
 
 const WordDetail = ({ selectedWord, closeDetail }) => {
-  const [imageSrc, setImageSrc] = useState("");
-  const [anotherWord, setAnotherWord] = useState("");
+  const imageSrc = useState("");
+  const anotherWord = useState("");
   const detailRef = useRef(null);
 
-  useEffect(() => {
-    if (selectedWord in details) {
-      setImageSrc(details[selectedWord].image);
-      setAnotherWord(details[selectedWord].anotherWord);
-    } else {
-      setImageSrc("");
-      setAnotherWord("");
-    }
-  }, [selectedWord]);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (detailRef.current && !detailRef.current.contains(event.target)) {
-        closeDetail();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [closeDetail]);
+  
 
   return (
-    <div ref={detailRef} className="border-2 border-[#d9d9d9]">
+    <div className="border-2 border-[#d9d9d9]">
       {/* <h2  >{selectedWord}</h2> */}
       <p className="text-center border-2 border-black">{anotherWord}</p>
-      {imageSrc && <Image src={imageSrc} alt={selectedWord} width={500} height={300} />}
+       <Image src={imageSrc} alt={selectedWord} width={500} height={300} />
     </div>
   );
 };
