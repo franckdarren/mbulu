@@ -36,10 +36,10 @@ export default function PageDictionnaire() {
     setSelectedOption(e.target.value);
   };
   return (
-    <main className="h-[100vh] flex flex-col">
+    <main className="h-[100vh] flex justify-between flex-col">
       <Navbar />
 
-      <div className="flex h-[100%] justify-center py-[20px]">
+      <div className="flex justify-center py-[20px]">
         <Image
           src="/assets/Group 1.svg"
           alt="logo"

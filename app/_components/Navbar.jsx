@@ -52,7 +52,7 @@ export function Navbar() {
                     className="hidden w-full md:block md:w-auto"
                     id="navbar-default"
                 >
-                    <ul className="absolute bg-[#D5711C] w-[55%] right-0 top-[55px] md:relative md:right-auto md:top-auto md:w-full md:bg-transparent font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
+                    <ul className="absolute bg-[#D5711C] w-[55%] right-0 top-[55px] md:relative md:right-auto md:top-auto md:w-full md:bg-transparent font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row lg:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
                         <li>
                             <ActiveLink href="/">Accueil</ActiveLink>
                         </li>

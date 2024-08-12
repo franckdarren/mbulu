@@ -2,9 +2,10 @@
 import { useState, useRef, useEffect } from "react";
 import WordDetail from "./WordDetail";
 
-const words = ["mot1", "mot2", "mot3", "mot4", "mot5", "mot6", "mot7", "mot8", "mot9", "mot10", "mot11", "mot12"]; // Ajoutez vos mots ici
 
 const WordList = () => {
+  const words = ["mot1", "mot2", "mot3", "mot4", "mot5", "mot6", "mot7", "mot8", "mot9", "mot10", "mot11", "mot12"]; // Ajoutez vos mots ici
+
   // Initialise le premier mot comme sélectionné par défaut au chargement
   const [selectedWord, setSelectedWord] = useState(words[0]);
   const wordListRef = useRef(null);

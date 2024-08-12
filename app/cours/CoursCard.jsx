@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function CoursCard({theme, lesson, ImageCours}) {
+export function CoursCard({theme, lesson, ImageCours, href}) {
     return (
         <div className="flex flex-col justify-center  delay-75 duration-300  hover:scale-105 items-center" >
             <div className=" rounded-[10px] w-[274px]  my-5 h-[100%]" >
