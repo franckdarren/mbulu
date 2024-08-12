@@ -2,31 +2,43 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export default async function handler(req, res) {
-    if (req.method !== 'GET') {
-        return res.status(405).json({ message: 'Method not allowed' });
-    }
-
-    const { mot } = req.query;
+export async function GET(req) {
+    const url = new URL(req.url);
+    const mot = url.searchParams.get('mot');
+    const languageId = url.searchParams.get('languageId'); // Ajout du paramètre languageId
 
     try {
-        // Requête de recherche dans la base de données
-        const contributions = await prisma.contribution.findMany({
-            where: {
-                mot: {
-                    contains: mot, // Recherche partielle
-                    mode: 'insensitive', // Sensible à la casse
-                },
+        // Préparer les conditions de recherche
+        const searchConditions = {
+            mot: {
+                contains: mot,
+                // mode: 'insensitive', // Décommentez si vous voulez rendre la recherche insensible à la casse
             },
+        };
+
+        // Ajouter le filtre de langue seulement si languageId est fourni
+        if (languageId) {
+            searchConditions.languageId = languageId;
+        }
+
+        const contributions = await prisma.contribution.findMany({
+            where: searchConditions,
             include: {
-                user: true,       // Inclure les relations nécessaires
-                language: true,
+                language: true, // Inclut les données de la langue associée
             },
         });
 
-        res.status(200).json(contributions);
+        return new Response(JSON.stringify(contributions), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json' },
+        });
+        // console.log(contributions); // Ne sera pas exécuté, mettez-le avant return si nécessaire
+
     } catch (error) {
         console.error('Error fetching contributions:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        return new Response(JSON.stringify({ error: 'Internal server error' }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+        });
     }
 }
