@@ -14,7 +14,7 @@ export function SectionCard() {
                 {
                     langues.map((langue) => (
                         <Link href={`/cours/${langue.slug}`} key={langue.id}>
-                            <MasqueCard titre={langue.titre} image={langue.image} />
+                            <MasqueCard titre={langue.titre} image={langue.photo} />
                         </Link>
                     ))
                 }

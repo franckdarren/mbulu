@@ -35,7 +35,7 @@ const WordList = () => {
 
   return (
     <div className="md:flex md:flex-row-reverse md:justify-center md:w-full" ref={wordListRef}>
-      <div className="md:w-[50%]">
+      <div className="">
         {selectedWord && <WordDetail selectedWord={selectedWord} closeDetail={closeDetail} />}
       </div>
       <ul className="border-black md:w-[30%]">
