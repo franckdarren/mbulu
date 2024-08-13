@@ -4,14 +4,14 @@ import WordDetail from "./WordDetail";
 
 
 const WordList = () => {
-  const words = ["mot1", "mot2", "mot3", "mot4", "mot5", "mot6", "mot7", "mot8", "mot9", "mot10", "mot11", "mot12"]; // Ajoutez vos mots ici
+  const words = ["mot1", "mot2", "mot3", "mot4", "mot5", "mot6"];
 
- 
+
 
   return (
-    <div className="md:flex md:flex-row-reverse md:justify-center md:w-full" >
+    <div className="md:flex md:flex-row-reverse md:justify-between md:w-full" >
       <div className="">
-  <WordDetail />
+        <WordDetail />
       </div>
       <ul className="border-black md:w-[30%]">
         {words.map((word) => (

@@ -168,7 +168,7 @@ export default function PageDictionnaire() {
               </div>
             )}
             {results.length > 0 && (
-              <ul>
+              <ul className="">
                 {results.map((contribution) => (
                   <li key={contribution.id}>
                     <Dictionnaire

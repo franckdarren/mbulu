@@ -107,7 +107,7 @@ const Section4 = () => {
     <div className="bg-[#012d36] md:flex py-11 mt-[100px] md:flex-row flex-col items-center md:justify-around px-6">
       <div className="md:w-[95%] md:ml-8">
         <div>
-          <h1 className="text-[#fb9600] leading-tight text-[20px] md:text-[50px]">Un panel de cours gratuits et adaptés à tous</h1>
+          <h1 className="text-[#fb9600] leading-[50px] text-[20px] md:text-[50px] mb-5">Un panel de cours gratuits et adaptés à tous</h1>
         </div>
         <div>
           <p className="text-[white] text-[10px] md:text-[20px]">Mbulu, permettant aux utilisateurs d&apos;apprendre les langues gabonaises de manière ludique et interactive. L&apos;application utilise des technologies modernes pour offrir une expérience utilisateur fluide et accessible, même hors ligne.</p></div>
@@ -139,10 +139,10 @@ const SectionWhatsapp = () => {
   return (
     <div className="py-11 bg-white  ">
       <div className="mx-[15%] flex flex-col gap-y-6 rounded-[15px] py-5 px-2 bg-[#012d36] " >
-        <h1 className="text-center text-[white] text-[18px] font-semibold md:text-[26px]  md:my-[20px]">Découvrez la Richesse des Langues Gabonaises avec Notre Application de Traduction</h1>
+        <h1 className="text-center text-[white] text-[18px] font-semibold md:text-[26px]  md:my-[20px] md:mx-4">Découvrez la Richesse des Langues Gabonaises avec Notre Application de Traduction</h1>
         <div >
 
-          <p className="text-[white] text-center text-[12px] md:text-[20px]">Contactez-nous dès aujourd&apos;hui pour découvrir comment notre application peut vous aider à traduire efficacement des textes en plusieurs langues gabonaises, et à explorer la richesse linguistique du pays..</p>
+          <p className="text-[white] text-center text-[12px] md:text-[17px] md:mx-3">Contactez-nous dès aujourd&apos;hui pour découvrir comment notre application peut vous aider à traduire efficacement des textes en plusieurs langues gabonaises, et à explorer la richesse linguistique du pays..</p>
         </div>
         <div className="flex lg:my-[25px] justify-center animate-levitate items-center gap-5">
           <Image src="/assets/whatsapp-logo.svg"
