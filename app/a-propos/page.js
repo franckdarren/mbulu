@@ -44,7 +44,7 @@ export default function Apropos() {
                                 />
                             </div>
                             <div className="items-center flex flex-col ">
-                                <h3 className="text-[10px] text-slate-100 md:text-[20px] font-bold text-center">Scrum Master/ Developpeur Back-end</h3>
+                                <h3 className="text-[10px] text-slate-100 md:text-[20px] font-bold text-center">Développeur Fullstack</h3>
                                 <h1 className="text-[15px] text-amber-500 md:text-[25px] text-center">KIKONDA Franck</h1>
                             </div>
                         </div>
@@ -74,7 +74,7 @@ export default function Apropos() {
                                 />
                             </div>
                             <div className="items-center flex flex-col ">
-                                <h3 className="text-[10px] text-slate-100 md:text-[20px] font-bold text-center">Developpeur front-end</h3>
+                                <h3 className="text-[10px] text-slate-100 md:text-[20px] font-bold text-center">Développeur front-end</h3>
                                 <h1 className="text-[15px] text-amber-500 md:text-[25px] text-center">SPERANDEZI Jean-claude</h1>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ export default function Apropos() {
                                 />
                             </div>
                             <div className="items-center flex flex-col ">
-                                <h3 className="text-[10px] text-slate-100 md:text-[20px] font-bold text-center">Designer UI/ Developpeur front-end</h3>
+                                <h3 className="text-[10px] text-slate-100 md:text-[20px] font-bold text-center">Designer UI/ Développeur front-end</h3>
                                 <h1 className="text-[15px] text-amber-500 md:text-[25px] text-center">MANDO Christ-Of-Fair</h1>
                             </div>
                         </div>
@@ -104,7 +104,7 @@ export default function Apropos() {
                                 />
                             </div>
                             <div className="items-center flex flex-col ">
-                                <h3 className="text-[10px] text-slate-100 md:text-[20px] font-bold text-center">Interprète/ Developpeur front-end</h3>
+                                <h3 className="text-[10px] text-slate-100 md:text-[20px] font-bold text-center">Interprète/ Développeur front-end</h3>
                                 <h1 className="text-[15px] text-amber-500 md:text-[25px] text-center">BUSSUHU Jarold</h1>
                             </div>
                         </div>
