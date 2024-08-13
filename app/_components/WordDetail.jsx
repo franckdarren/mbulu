@@ -56,7 +56,7 @@ const details = {
 };
 
 const WordDetail = ({ selectedWord, closeDetail }) => {
-  const imageSrc = useState("");
+
   const anotherWord = useState("");
   const detailRef = useRef(null);
 
@@ -66,7 +66,7 @@ const WordDetail = ({ selectedWord, closeDetail }) => {
     <div className="border-2 border-[#d9d9d9]">
       {/* <h2  >{selectedWord}</h2> */}
       <p className="text-center border-2 border-black">{anotherWord}</p>
-       <Image src={imageSrc} alt={selectedWord} width={500} height={300} />
+       <Image src={"/assets/image 27.png"} alt={selectedWord} width={500} height={300} />
     </div>
   );
 };
