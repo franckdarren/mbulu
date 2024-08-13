@@ -9,7 +9,7 @@ export default async function Layout({ children }) {
     const { userId } = auth();
 
     if (!userId) {
-        redirect("/");
+        redirect("/sign-up");
         return null;
     }
 

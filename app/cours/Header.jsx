@@ -8,7 +8,7 @@ export function Header({ photo_gif, titreParagraph, titreText, photo_langue }) {
       <div className="md:flex md:w-[100%] flex-row-reverse md:mb-10 md:h-[337px] h-[350px] md:justify-evenly md:w:[100%] justify-center items-center flex px-5">
         <div className="md:w-[250px] flex justify-center items-center">
           {" "}
-          <Image src={photo_gif} alt="image" width={300} height={400} />{" "}
+          <Image src={photo_gif} alt="image" width={300} height={400} />
         </div>
         <div>
           <div className="md:w-[237px] w-[137px]">
@@ -18,7 +18,7 @@ export function Header({ photo_gif, titreParagraph, titreText, photo_langue }) {
               alt="image"
               width={150}
               height={150}
-            />{" "}
+            />
           </div>
           <div className="text-[48px] md:text-[68px]">{titreText}</div>
         </div>
