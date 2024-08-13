@@ -3,14 +3,14 @@ import { Aside } from "../_components/Aside";
 import "../main.css";
 import { redirect } from "next/navigation";
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { addUserToDatabases, getUserFromDatabase } from "@/services/userServices";
+import { addUserToDatabases, getUserFromDatabase } from "../../services/userServices";
 
 export default async function Layout({ children }) {
     const { userId } = auth();
 
     if (!userId) {
-        redirect("/");
-        return null;  // Important: avoid rendering if redirecting
+        redirect("/sign-up");
+        return null;
     }
 
     const user = await currentUser();
@@ -24,9 +24,17 @@ export default async function Layout({ children }) {
 
     const data = await getUserFromDatabase(userId);
 
+
+    // if (data.role === 'USER') {
+    //     redirect("/admin/cours");
+    // } else {
+    //     redirect("/admin/dashboard");
+    // }
+
+
     return (
         <div className="mt-5 mx-5">
-            <Aside />
+            <Aside data={data} />
             <AdminNavbar data={data} />
             {children}
         </div>

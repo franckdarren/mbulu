@@ -1,8 +1,11 @@
-import AdminTitre from "@/app/_components/AdminTitre";
+import AdminTitre from "../../_components/AdminTitre";
 import Image from "next/image";
-import { getAllUsersFromDatabase } from "@/services/userServices";
+import { getAllUsersFromDatabase } from "../../../services/userServices";
+import { ClipLoader } from 'react-spinners';
+
 
 export default async function Utilisateurs() {
+    
     // Recupères les utilisateurs
     const users = await getAllUsersFromDatabase();
 
