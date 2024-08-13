@@ -103,10 +103,11 @@ export default function PageDictionnaire() {
   };
 
   return (
-    <main className="flex flex-col min-h-screen justify-between ">
-      <Navbar />
-
-      <div className="flex items-center justify-center px-5">
+    <main className="flex flex-col min-h-screen md:gap-y-2 justify-between ">
+      
+      <div className="flex flex-col gap-12" > 
+        <Navbar />
+      <div className="flex items-center justify-center py-5 px-5">
         <Image
           src="/assets/Group 1.svg"
           alt="logo"
@@ -190,8 +191,10 @@ export default function PageDictionnaire() {
           className=""
         />
       </div>
+      </div>
+      
 
-      <Footer className="bottom-0" />
+      <Footer />
     </main>
   );
 }
