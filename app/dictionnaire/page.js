@@ -115,7 +115,7 @@ export default function PageDictionnaire() {
           height={168}
           className=""
         />
-        <div className="md:w-[65%] mt-[40px]">
+        <div className="md:w-[65%] lg:w-[700px] mt-[40px]">
           <Dropdown
             selectedOption={selectedOption}
             selectedLanguageId={selectedLanguageId}
