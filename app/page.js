@@ -93,8 +93,9 @@ const Section2 = () => {
       <div className="flex md:mb-0 mb-3 lg:py-5 flex-col gap-5 md:gap-10 justify-between p-2 items-center ">
         <h3 className=" text-center text-[#012d36] font-semibold text-[18px] md:text-[30px]">Obtenez des traduction instantanées dans plusieurs langues gabonaises</h3>
 
-
+        <a href="/dictionnaire">
         <Button titreButton="Essayer une traduction" color="bg-[#FB9600] hover:bg-[#f7af44]" />
+        </a>
       </div>
 
     </div>
@@ -107,7 +108,7 @@ const Section4 = () => {
     <div className="bg-[#012d36] md:flex py-11 mt-[100px] md:flex-row flex-col items-center md:justify-around px-6">
       <div className="md:w-[95%] md:ml-8">
         <div>
-          <h1 className="text-[#fb9600] leading-[50px] text-[20px] md:text-[50px] mb-5">Un panel de cours gratuits et adaptés à tous</h1>
+          <h1 className="text-[#fb9600] lg:leading-[50px] text-[20px] md:text-[40px] mb-5">Un panel de cours gratuits et adaptés à tous</h1>
         </div>
         <div>
           <p className="text-[white] text-[10px] md:text-[20px]">Mbulu, permettant aux utilisateurs d&apos;apprendre les langues gabonaises de manière ludique et interactive. L&apos;application utilise des technologies modernes pour offrir une expérience utilisateur fluide et accessible, même hors ligne.</p></div>
@@ -138,7 +139,7 @@ const SectionFaqs = () => {
 const SectionWhatsapp = () => {
   return (
     <div className="py-11 bg-white  ">
-      <div className="mx-[15%] flex flex-col gap-y-6 rounded-[15px] py-5 px-2 bg-[#012d36] " >
+      <div className="mx-[8%] md:mx-[10%] px-5 flex flex-col gap-y-6 rounded-[15px] py-5 bg-[#012d36] " >
         <h1 className="text-center text-[white] text-[18px] font-semibold md:text-[26px]  md:my-[20px] md:mx-4">Découvrez la Richesse des Langues Gabonaises avec Notre Application de Traduction</h1>
         <div >
 
