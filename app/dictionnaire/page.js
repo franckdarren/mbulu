@@ -36,7 +36,7 @@ function Dropdown({
 }
 
 export default function PageDictionnaire() {
-  const [selectedOption, setSelectedOption] = useState("Français - Fang");
+  const [selectedOption, setSelectedOption] = useState("Toutes les langues");
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
