@@ -4,17 +4,17 @@ const prisma = new PrismaClient();
 
 export async function GET(req) {
     const url = new URL(req.url);
-    const mot = url.searchParams.get('mot');
-    const languageId = url.searchParams.get('languageId');
+    let mot = url.searchParams.get('mot');
+    // Vérifier si le mot est défini, sinon définir une chaîne vide
+    mot = mot ? mot.toLowerCase().replace(/\s+/g, '') : '';
 
-    console.log('Mot:', mot);
-    console.log('Language ID:', languageId);
+    const languageId = url.searchParams.get('languageId');
 
     try {
         const searchConditions = {
             OR: [
-                { mot: { contains: mot } },
-                { traduction: { contains: mot } },
+                { mot: { contains: mot, mode: 'insensitive' } }, // Insensible à la casse
+                { traduction: { contains: mot, mode: 'insensitive' } }, // Insensible à la casse
             ],
         };
 
