@@ -7,6 +7,7 @@ export async function GET(req) {
     let mot = url.searchParams.get('mot');
     // Vérifier si le mot est défini, sinon définir une chaîne vide
     mot = mot ? mot.toLowerCase().replace(/\s+/g, '') : '';
+
     const languageId = url.searchParams.get('languageId');
 
     try {
