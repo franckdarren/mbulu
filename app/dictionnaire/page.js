@@ -19,7 +19,7 @@ function Dropdown({
       <select
         id="dropdown"
         name="dropdown"
-        className="mt-1 block w-[250px] py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm max-sm:w-[150px] mb-2"
+        className="mt-1 block w-full max-w-[250px] py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm max-sm:w-[150px] mb-2"
         value={selectedLanguageId}
         onChange={(e) => {
           handleLanguageChange(e);
@@ -118,7 +118,7 @@ export default function PageDictionnaire() {
           height={168}
           className=""
         />
-        <div className="md:w-[65%] lg:w-[700px] mt-[40px]">
+        <div className=" md:w-[65%] lg:w-[700px] mt-[40px]">
           <Dropdown
             selectedOption={selectedOption}
             selectedLanguageId={selectedLanguageId}
