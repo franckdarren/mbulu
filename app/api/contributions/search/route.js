@@ -4,7 +4,9 @@ const prisma = new PrismaClient();
 
 export async function GET(req) {
     const url = new URL(req.url);
-    const mot = url.searchParams.get('mot');
+    let mot = url.searchParams.get('mot');
+    // Convertir le mot en minuscule et supprimer les espaces
+    mot = mot.toLowerCase().replace(/\s+/g, '');
     const languageId = url.searchParams.get('languageId');
 
     console.log('Mot:', mot);
