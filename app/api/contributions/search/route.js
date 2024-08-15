@@ -13,8 +13,8 @@ export async function GET(req) {
     try {
         const searchConditions = {
             OR: [
-                { mot: { contains: mot } },
-                { traduction: { contains: mot } },
+                { mot: { contains: mot, mode: 'insensitive' } }, // Insensible à la casse
+                { traduction: { contains: mot, mode: 'insensitive' } }, // Insensible à la casse
             ],
         };
 
