@@ -36,7 +36,7 @@ function Dropdown({
 }
 
 export default function PageDictionnaire() {
-  const [selectedOption, setSelectedOption] = useState("Français - Fang");
+  const [selectedOption, setSelectedOption] = useState("Toutes les langues");
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -65,10 +65,13 @@ export default function PageDictionnaire() {
       return;
     }
 
+    // Convertir en minuscule et supprimer les espaces
+    const sanitizedSearchTerm = searchTerm.toLowerCase().replace(/\s+/g, '');
+
     setLoading(true);
     setErrorMessage("");
     try {
-      const encodedSearchTerm = encodeURIComponent(searchTerm);
+      const encodedSearchTerm = encodeURIComponent(sanitizedSearchTerm);
       const url = `/api/contributions/search?mot=${encodedSearchTerm}&languageId=${selectedLanguageId}`;
       console.log("Fetching URL:", url);
       const response = await fetch(url, {
@@ -151,7 +154,7 @@ export default function PageDictionnaire() {
           </div>
         </div>
       </div>
-      
+
       <div className="bg-[#FB9600] w-full py-2 px-[5%]">
         Dictionnaire {selectedOption}
       </div>
