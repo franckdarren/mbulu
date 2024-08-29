@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 import { getCountUsersFromDatabase } from "../../services/userServices";
-import { getCountContributionFromDatabase, getCountContributionUserFromDatabase } from "../../services/contributionServices";
 
 export function AdminLink({ href, icone, counter, children }) {
     const pathname = usePathname();
@@ -41,8 +41,34 @@ export function AdminLink({ href, icone, counter, children }) {
 export function Aside({ data }) {
 
     // const usersCount = await getCountUsersFromDatabase();
-    // const contributionsCount = await getCountContributionFromDatabase();
-    // const contributionsUserCount = await getCountContributionUserFromDatabase(data);
+    const [userContributionCount, setUserContributionCount] = useState(null);
+    const [totalContributionCount, setTotalContributionCount] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const intervalId = setInterval(async () => {
+            try {
+                if (!data || !data.id) {
+                    setError('User ID is required');
+                    return;
+                }
+
+                const userResponse = await fetch(`/api/contributions/countContributionUser?userId=${data.id}`);
+                const userData = await userResponse.json();
+                if (!userResponse.ok) throw new Error(userData.error);
+                setUserContributionCount(userData);
+
+                const totalResponse = await fetch('/api/contributions/countContribution');
+                const totalData = await totalResponse.json();
+                if (!totalResponse.ok) throw new Error(totalData.error);
+                setTotalContributionCount(totalData);
+            } catch (err) {
+                setError(err.message);
+            }
+        }, 5000);
+
+        return () => clearInterval(intervalId);
+    }, [data]);
 
     return (
         <aside className="aside is-placed-left is-expanded">
@@ -65,12 +91,6 @@ export function Aside({ data }) {
                         <p className="menu-label">General</p>
                         <ul className="menu-list">
                             <li className="--set-active-index-html">
-                                {/* <Link href="/admin/dashboard" legacyBehavior>
-                                    <a className="has-icon">
-                                        <span className="icon"><i className="mdi mdi-monitor-dashboard"></i></span>
-                                        <span className="menu-item-label">Tableau de bord</span>
-                                    </a>
-                                </Link> */}
                                 <AdminLink href="/admin/dashboard" icone="mdi mdi-monitor-dashboard">Tableau de bord</AdminLink>
                             </li>
                         </ul>
@@ -81,12 +101,6 @@ export function Aside({ data }) {
                     <p className="menu-label mt-5">Apprendre une langue</p>
                     <ul className="menu-list">
                         <li className="--set-active-index-html">
-                            {/* <Link href="/admin/cours" legacyBehavior>
-                                <a className="has-icon">
-                                    <span className="icon"><i className="mdi mdi-school"></i></span>
-                                    <span className="menu-item-label">Cours</span>
-                                </a>
-                            </Link> */}
                             <AdminLink href="/admin/cours" icone="mdi mdi-school">Cours</AdminLink>
                         </li>
                     </ul>
@@ -96,26 +110,15 @@ export function Aside({ data }) {
                     {(data.role === "ADMIN" || data.role === "CONTRIBUTOR") && (
                         <>
                             <p className="menu-label mt-5">Dictionnaire</p>
-
                             <li className="--set-active-tables-html">
-                                {/* <a href="/admin/contributions" className="has-icon flex items-center justify-center">
-                                    <span className="icon"><i className="mdi mdi-format-list-bulleted-square"></i></span>
-                                    <span className="menu-item-label">Contributions</span>
-                                    <p className="flex items-center text-[9px] justify-center w-6 h-5 font-semibold text-blue-800 bg-blue-200 rounded-full mr-4">
-                                    </p>
-                                </a> */}
-                                <AdminLink href="/admin/contributions" icone="mdi mdi-format-list-bulleted-square">Contributions</AdminLink>
-
+                                <AdminLink href="/admin/contributions" icone="mdi mdi-format-list-bulleted-square" counter={totalContributionCount}>Contributions</AdminLink>
                             </li>
                             <li className="--set-active-forms-html">
-                                <AdminLink href="/admin/mes-contributions" icone="mdi mdi-file-document-check-outline">Mes contributions</AdminLink>
+                                <AdminLink href="/admin/mes-contributions" icone="mdi mdi-file-document-check-outline" counter={userContributionCount}>Mes contributions</AdminLink>
                             </li>
                         </>
                     )}
-
                 </ul>
-
-
 
                 {data.role === "ADMIN" && (
                     <>
