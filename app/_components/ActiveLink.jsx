@@ -6,10 +6,13 @@ const ActiveLink = ({ href, children }) => {
     const pathname = usePathname();
 
     // Normalise les chemins en supprimant les barres obliques finales pour une comparaison cohérente
-    const normalizedPathname = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
-    const normalizedHref = href.endsWith('/') ? href.slice(0, -1) : href;
+    const normalizedPathname = pathname === '/' ? pathname : pathname.replace(/\/+$/, '');
+    const normalizedHref = href === '/' ? href : href.replace(/\/+$/, '');
 
-    const isActive = normalizedPathname === normalizedHref;
+    // Vérifie si le lien est actif pour la page racine ou une sous-page
+    const isActive =
+        (normalizedHref === '/' && normalizedPathname === '/') || // Active uniquement pour la page d'accueil
+        (normalizedHref !== '/' && (normalizedPathname === normalizedHref || normalizedPathname.startsWith(`${normalizedHref}/`)));
 
     return (
         <a
