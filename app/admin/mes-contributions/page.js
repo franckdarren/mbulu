@@ -97,21 +97,21 @@ export default function MesContributions() {
     };
 
     // Approuver une contribution
-    const handleApprove = async (contributionId) => {
-        setLoadingApprove((prevState) => ({ ...prevState, [contributionId]: true })); // Démarrer le chargement de l'approbation
-        try {
-            const response = await axios.post('/api/update-contribution-status', {
-                contributionId,
-                newStatus: 'APPROUVE'
-            });
-            console.log('Contribution approved:', response.data);
-            fetchContributions(); // Assurez-vous que fetchContributions est bien appelé et attend la réponse
-        } catch (error) {
-            console.error('Error approving contribution:', error.response?.data || error.message);
-        } finally {
-            setLoadingApprove((prevState) => ({ ...prevState, [contributionId]: false })); // Arrêter le chargement de l'approbation
-        }
-    };
+    // const handleApprove = async (contributionId) => {
+    //     setLoadingApprove((prevState) => ({ ...prevState, [contributionId]: true })); // Démarrer le chargement de l'approbation
+    //     try {
+    //         const response = await axios.post('/api/update-contribution-status', {
+    //             contributionId,
+    //             newStatus: 'APPROUVE'
+    //         });
+    //         console.log('Contribution approved:', response.data);
+    //         fetchContributions(); // Assurez-vous que fetchContributions est bien appelé et attend la réponse
+    //     } catch (error) {
+    //         console.error('Error approving contribution:', error.response?.data || error.message);
+    //     } finally {
+    //         setLoadingApprove((prevState) => ({ ...prevState, [contributionId]: false })); // Arrêter le chargement de l'approbation
+    //     }
+    // };
 
 
 
