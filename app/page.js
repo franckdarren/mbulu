@@ -1,4 +1,7 @@
 import Image from "next/image";
+import family from "../public/assets/img family.png";
+import mockup from "../public/assets/gif-mockup.gif";
+import what from "../public/assets/whatsapp-logo.svg";
 import { Navbar } from "./_components/Navbar";
 import { Footer } from "./_components/Footer";
 import { Button } from "./_components/Button";
@@ -82,7 +85,7 @@ const Section1 = () => {
         </div>
         <div className="">
           <Image
-            src="/assets/gif-mockup.gif"
+            src={mockup}
             width={300}
             height={213}
             alt="gif"
@@ -100,19 +103,7 @@ const Section2 = () => {
       className="my-11 py-8 justify-center h-[300px] md:h-[400px] lg:h-[450px] lg:px-[10%] px-4 gap-1 bg-center bg-cover flex"
       style={{ backgroundImage: "url(/assets/keywordSearch.gif)" }}
     >
-      {/* <Image src="/assets/WeWork — Rebecca Mock.gif"
-        width={145}
-        height={113}
-        alt="gif"
-        className="relative left-[210px] top-[15px]  rounded-lg md:w-[284px] md:h-[152px] md:left-[60%]"
-      /> */}
-
-      {/* <Image src="/assets/KeywordSearch.gif"
-          width={145}
-          height={113}
-          alt="gif"
-          className=" rounded-lg  mb-[10px] h-[150px] md:w-full max-w-[400px] md:h-full"
-        /> */}
+      
 
       <div className="flex md:mb-0 mb-3 lg:py-5 flex-col gap-5 md:gap-10 justify-between p-2 items-center ">
         <h3 className=" text-center text-[#012d36] font-semibold text-[18px] md:text-[30px]">
@@ -150,7 +141,7 @@ const Section4 = () => {
       </div>
       <div className="bg-cover bg-center flex justify-center items-center h-[300px] w-full">
         <Image
-          src="/assets/img family.png"
+          src={family}
           width={285}
           height={253}
           alt="image"
@@ -205,7 +196,7 @@ const SectionWhatsapp = () => {
         </div>
         <div className="flex lg:my-[25px] justify-center animate-levitate items-center gap-5">
           <Image
-            src="/assets/whatsapp-logo.svg"
+            src={what}
             width={50}
             height={50}
             alt="image"

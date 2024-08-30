@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import logo from "../../public/assets/Group 1.svg";
+import search from "../../public/assets/tabler_search.svg";
+import dico from "../../public/assets/dico.gif";
 import { Navbar } from "../_components/Navbar";
 import { Footer } from "../_components/Footer";
 import { Dictionnaire } from "./dictionnaire";
@@ -112,7 +115,7 @@ export default function PageDictionnaire() {
         <Navbar />
       <div className="flex items-center justify-center py-5 px-5">
         <Image
-          src="/assets/Group 1.svg"
+          src={logo}
           alt="logo"
           width={102}
           height={168}
@@ -145,7 +148,7 @@ export default function PageDictionnaire() {
               className="h-auto md:hidden flex items-center justify-center text-white bg-[#164048] rounded-r-lg px-2 hover:bg-[#447a85]"
             >
               <Image
-                src="/assets/tabler_search.svg"
+                src={search}
                 alt="logo"
                 width={50}
                 height={50}
@@ -187,7 +190,7 @@ export default function PageDictionnaire() {
           </>
         )}
         <Image
-          src="/assets/dico.gif"
+          src={dico}
           alt="logo"
           width={200}
           height={200}
