@@ -28,6 +28,7 @@ export default function Contributions() {
     const [loadingContributions, setLoadingContributions] = useState(true); // État de chargement des contributions
     const [loadingSubmit, setLoadingSubmit] = useState(false); // État de chargement de la soumission
     const [loadingApprove, setLoadingApprove] = useState({}); // État de chargement de l'approbation
+    const [selectedContribution, setSelectedContribution] = useState(null); // État pour la contribution sélectionnée
 
     const { userId } = useAuth();
 
@@ -51,6 +52,42 @@ export default function Contributions() {
     useEffect(() => {
         fetchContributions();
     }, [fetchContributions]);
+
+    // Modifier une contribution
+    const { register, handleSubmit, reset, formState: { errors }, setValue } = useForm();
+    const onSubmit = async (data) => {
+        setLoadingSubmit(true);
+        try {
+            let response;
+            if (selectedContribution) {
+                // Mise à jour de la contribution existante
+                response = await axios.put('/api/update-contribution', {
+                    ...data,
+                    userId: userId,
+                    contributionId: selectedContribution.id,
+                });
+
+                console.log('Contribution updated:', response.data);
+            }
+            setOpenModal(false);
+            fetchContributions();
+            reset();
+            setSelectedContribution(null); // Réinitialiser après la soumission
+        } catch (error) {
+            console.error('Error adding/updating contribution:', error.response?.data || error.message);
+        } finally {
+            setLoadingSubmit(false);
+        }
+    };
+
+    // Ouvrir le modal pour modification
+    const openEditModal = (contribution) => {
+        setSelectedContribution(contribution);
+        setValue('mot', contribution.mot);
+        setValue('traduction', contribution.traduction);
+        setValue('langue', contribution.langue);
+        setOpenModal(true);
+    };
 
     // Approuver une contribution
     const handleApprove = async (contributionId) => {
@@ -77,6 +114,62 @@ export default function Contributions() {
     return (
         <main>
             <AdminTitre titre="Contributions" />
+            <Modal show={openModal} onClose={() => { setOpenModal(false); setSelectedContribution(null); }}>
+                <Modal.Header>{selectedContribution ? 'Modifier la contribution' : 'Soumettre une contribution'}</Modal.Header>
+                <Modal.Body>
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                        <div>
+                            <div className="mb-2 block">
+                                <Label htmlFor="text" value="Mot ou expression" />
+                            </div>
+                            <TextInput
+                                id="text"
+                                placeholder=""
+                                required
+                                {...register('mot', { required: 'Ce champ est requis' })}
+                            />
+                            {errors.mot && <span className="text-red-600">{errors.mot.message}</span>}
+                        </div>
+                        <div>
+                            <div className="mb-2 block">
+                                <Label htmlFor="traduction" value="Traduction en français" />
+                            </div>
+                            <Textarea
+                                id="traduction"
+                                placeholder=""
+                                required
+                                rows={4}
+                                {...register('traduction', { required: 'Ce champ est requis' })}
+                            />
+                            {errors.traduction && <span className="text-red-600">{errors.traduction.message}</span>}
+                        </div>
+                        <div>
+                            <label htmlFor="langue" className="block mb-2 text-sm font-medium text-gray-900">
+                                Sélectionner la langue
+                            </label>
+                            <select
+                                id="langue"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                {...register('langue', { required: 'Ce champ est requis' })}
+                                defaultValue={selectedContribution?.langue || ""}
+                            >
+                                <option value="" disabled>Choisir la langue</option>
+                                <option value="66ae7545c443269e80e9770e">FANG</option>
+                                <option value="66ae757cc443269e80e9770f">MYENE</option>
+                                <option value="66ae7588c443269e80e97710">PUNU</option>
+                            </select>
+                            {errors.langue && <span className="text-red-600">{errors.langue.message}</span>}
+                        </div>
+                        <button
+                            type="submit"
+                            className="p-2 mb-2 text-sm text-[#1f2937] rounded-md bg-[#1f2937] hover:bg-[#D5711C]"
+                            disabled={loadingSubmit}
+                        >
+                            {loadingSubmit ? <ClipLoader size={20} color={"#1f2937"} /> : selectedContribution ? "Modifier" : "Ajouter une contribution"}
+                        </button>
+                    </form>
+                </Modal.Body>
+            </Modal>
             {loadingContributions ? (
                 <div className="flex justify-center items-center h-64">
                     <ClipLoader size={50} color={"#1f2937"} />
@@ -121,6 +214,7 @@ export default function Contributions() {
                                 <td className="">
                                     <div className="flex items-center justify-end">
                                         <span
+                                            onClick={() => openEditModal(contribution)}
                                             className="text-[12px] text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
                                         >
                                             Modifier
