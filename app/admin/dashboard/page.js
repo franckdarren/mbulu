@@ -4,23 +4,23 @@ import { getCountUsersFromDatabase } from "../../../services/userServices";
 
 
 
-export async function DashboardCard({ titre, counter }) {
+export function DashboardCard({ titre, counter }) {
 
     return (
-        <div class="flex flex-col bg-white rounded-xl shadow-lg">
-            <div class="px-6 py-8 sm:p-10 sm:pb-6">
-                <div class="grid items-center justify-center w-full grid-cols-1 text-left">
+        <div className="flex flex-col bg-white rounded-xl shadow-lg">
+            <div className="px-6 py-8 sm:p-10 sm:pb-6">
+                <div className="grid items-center justify-center w-full grid-cols-1 text-left">
                     <div>
                         <h2
-                            class="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl"
+                            className="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl"
                         >
                             {titre}
                         </h2>
-                        {/* <p class="mt-2 text-sm text-gray-500">Suitable to grow steadily.</p> */}
+                        {/* <p className="mt-2 text-sm text-gray-500">Suitable to grow steadily.</p> */}
                     </div>
-                    <div class="mt-6">
+                    <div className="mt-6">
                         <p>
-                            <span class="text-5xl font-light tracking-tight text-black">
+                            <span className="text-5xl font-light tracking-tight text-black">
                                 {counter}
                             </span>
                         </p>
