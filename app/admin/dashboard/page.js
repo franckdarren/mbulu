@@ -4,7 +4,7 @@ import { getCountUsersFromDatabase } from "../../../services/userServices";
 
 
 
-export async function Card({ titre, counter }) {
+export async function DashboardCard({ titre, counter }) {
 
     return (
         <div class="flex flex-col bg-white rounded-xl shadow-lg">
@@ -41,9 +41,9 @@ export default async function Dashboard() {
         <main className="">
             <AdminTitre titre="Tableau de bord" />
             <div className="grid grid-cols-4 gap-5">
-                <Card titre="Contributions" counter={contributions} />
-                <Card titre="Utilisateurs" counter={users} />
-                <Card titre="Langues" counter="3" />
+                <DashboardCard titre="Contributions" counter={contributions} />
+                <DashboardCard titre="Utilisateurs" counter={users} />
+                <DashboardCard titre="Langues" counter="3" />
             </div>
 
         </main>
