@@ -7,7 +7,13 @@ const nextConfig = {
                 hostname: "img.clerk.com",
                 pathname: "**"
             },
+            {
+                protocol: 'https',
+                hostname: "horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app",
+                pathname: "**"
+            },
         ],
+
     }
 };
 

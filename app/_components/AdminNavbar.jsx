@@ -38,7 +38,7 @@ export function AdminNavbar({ data }) {
                             <span className="icon"><i className="mdi mdi-chevron-down"></i></span>
                         </a>
                         <div className="navbar-dropdown">
-                            <a href="#" className="navbar-item hover:bg-slate-200">
+                            <a href="/admin/profil" className="navbar-item hover:bg-slate-200">
                                 <span className="icon"><i className="mdi mdi-account"></i></span>
                                 <span>Mon compte</span>
                             </a>

@@ -15,6 +15,50 @@ export const getCountContributionUserFromDatabase = async (data) => {
 
 }
 
+export const contributionUserApprouve = async (data) => {
+    try {
+        const count = await prisma.contribution.count({
+            where: {
+                AND: [
+                    {
+                        userId: data.id,
+                    },
+                    {
+                        status: 'APPROUVE',
+                    }
+                ],
+            },
+        });
+        return count;
+    } catch (error) {
+        console.error("Une erreur est survenue lors de la récupération du nombre de contributions", error);
+        throw error;
+    }
+
+}
+
+export const contributionUserAttente = async (data) => {
+    try {
+        const count = await prisma.contribution.count({
+            where: {
+                AND: [
+                    {
+                        userId: data.id,
+                    },
+                    {
+                        status: 'ENVOYE',
+                    }
+                ],
+            },
+        });
+        return count;
+    } catch (error) {
+        console.error("Une erreur est survenue lors de la récupération du nombre de contributions", error);
+        throw error;
+    }
+
+}
+
 export const getCountContributionAttenteFromDatabase = async () => {
     try {
         const count = await prisma.contribution.count({
