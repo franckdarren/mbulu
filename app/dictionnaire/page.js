@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import logo from "../../public/assets/Group 1.svg";
+import search from "../../public/assets/tabler_search.svg";
+import dico from "../../public/assets/dico.gif";
 import { Navbar } from "../_components/Navbar";
 import { Footer } from "../_components/Footer";
 import { Dictionnaire } from "./dictionnaire";
@@ -19,7 +22,7 @@ function Dropdown({
       <select
         id="dropdown"
         name="dropdown"
-        className="mt-1 block w-[250px] py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm max-sm:w-[150px] mb-2"
+        className="mt-1 block w-full max-w-[250px] py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm max-sm:w-[150px] mb-2"
         value={selectedLanguageId}
         onChange={(e) => {
           handleLanguageChange(e);
@@ -106,18 +109,19 @@ export default function PageDictionnaire() {
   };
 
   return (
-    <main className="flex flex-col min-h-screen justify-between ">
-      <Navbar />
-
-      <div className="flex items-center justify-center px-5">
+    <main className="flex flex-col min-h-screen md:gap-y-2 justify-between ">
+      
+      <div className="flex flex-col gap-12" > 
+        <Navbar />
+      <div className="flex items-center justify-center py-5 px-5">
         <Image
-          src="/assets/Group 1.svg"
+          src={logo}
           alt="logo"
           width={102}
           height={168}
           className=""
         />
-        <div className="md:w-[65%] mt-[40px]">
+        <div className=" md:w-[65%] lg:w-[700px] mt-[40px]">
           <Dropdown
             selectedOption={selectedOption}
             selectedLanguageId={selectedLanguageId}
@@ -144,7 +148,7 @@ export default function PageDictionnaire() {
               className="h-auto md:hidden flex items-center justify-center text-white bg-[#164048] rounded-r-lg px-2 hover:bg-[#447a85]"
             >
               <Image
-                src="/assets/tabler_search.svg"
+                src={search}
                 alt="logo"
                 width={50}
                 height={50}
@@ -186,15 +190,17 @@ export default function PageDictionnaire() {
           </>
         )}
         <Image
-          src="/assets/dico.gif"
+          src={dico}
           alt="logo"
           width={200}
           height={200}
           className=""
         />
       </div>
+      </div>
+      
 
-      <Footer className="bottom-0" />
+      <Footer />
     </main>
   );
 }
