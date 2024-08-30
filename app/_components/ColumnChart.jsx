@@ -82,12 +82,12 @@ const ColumnChart = ({ fang, myene, punu }) => {
     };
 
     return (
-        <div className='md:w-[50%]'>
+        <div className='md:w-[40%]'>
             <Chart
                 options={options}
                 series={options.series}
                 type="bar"
-                height={320}
+                height={300}
             />
         </div>
     );

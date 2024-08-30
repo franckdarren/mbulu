@@ -1,7 +1,9 @@
 import AdminTitre from "../../../app/_components/AdminTitre";
 import { getCountContributionFromDatabase, getCountFangContributionFromDatabase, getCountMyeneContributionFromDatabase, getCountPunuContributionFromDatabase, getCountContributionAttenteFromDatabase } from "../../../services/contributionServices";
 import { getCountUsersFromDatabase } from "../../../services/userServices";
-import ColumnChart from "../../_components/ColumnChart"
+import ColumnChart from "../../_components/ColumnChart";
+import PieChart from "../../_components/PieChart";
+
 
 // Composant de carte de tableau de bord
 function DashboardCard({ titre, counter }) {
@@ -43,13 +45,16 @@ export default async function Dashboard() {
     return (
         <main>
             <AdminTitre titre="Tableau de bord" />
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
                 <DashboardCard titre="Contributions" counter={contributions} />
                 <DashboardCard titre="En attente" counter={contributionsAttente} />
                 <DashboardCard titre="Utilisateurs" counter={users} />
                 <DashboardCard titre="Langues" counter="3" />
             </div>
-            <ColumnChart fang={countFangcontributions} myene={countMyenecontributions} punu={countPunucontributions} />
+            <div className="flex flex-col md:flex-row gap-5 mb-6 md:mb-0">
+                <ColumnChart fang={countFangcontributions} myene={countMyenecontributions} punu={countPunucontributions} />
+                <PieChart fang={countFangcontributions} myene={countMyenecontributions} punu={countPunucontributions} />
+            </div>
         </main>
     );
 }
