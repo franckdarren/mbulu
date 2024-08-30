@@ -1,11 +1,12 @@
 import AdminTitre from "../../../app/_components/AdminTitre";
-import { getCountContributionFromDatabase } from "../../../services/contributionServices";
+import { getCountContributionFromDatabase, getCountFangContributionFromDatabase, getCountMyeneContributionFromDatabase, getCountPunuContributionFromDatabase, getCountContributionAttenteFromDatabase } from "../../../services/contributionServices";
 import { getCountUsersFromDatabase } from "../../../services/userServices";
+import ColumnChart from "../../_components/ColumnChart"
 
 // Composant de carte de tableau de bord
 function DashboardCard({ titre, counter }) {
     return (
-        <div className="flex flex-col bg-white rounded-xl shadow-lg">
+        <div className="flex flex-col bg-whiteDashboardChart rounded-xl shadow-lg">
             <div className="px-6 py-8 sm:p-10 sm:pb-6">
                 <div className="grid items-center justify-center w-full grid-cols-1 text-left">
                     <div>
@@ -30,16 +31,25 @@ function DashboardCard({ titre, counter }) {
 export default async function Dashboard() {
     // Appels à la base de données pour obtenir les compteurs
     let contributions = await getCountContributionFromDatabase();
+    let contributionsAttente = await getCountContributionAttenteFromDatabase();
+
+
+    let countFangcontributions = await getCountFangContributionFromDatabase();
+    let countMyenecontributions = await getCountMyeneContributionFromDatabase();
+    let countPunucontributions = await getCountPunuContributionFromDatabase();
+
     let users = await getCountUsersFromDatabase();
 
     return (
         <main>
             <AdminTitre titre="Tableau de bord" />
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                 <DashboardCard titre="Contributions" counter={contributions} />
+                <DashboardCard titre="En attente" counter={contributionsAttente} />
                 <DashboardCard titre="Utilisateurs" counter={users} />
                 <DashboardCard titre="Langues" counter="3" />
             </div>
+            <ColumnChart fang={countFangcontributions} myene={countMyenecontributions} punu={countPunucontributions} />
         </main>
     );
 }
