@@ -1,4 +1,4 @@
-"use client"; // Indique que le composant doit être exécuté côté client
+"use client";
 
 import React from 'react';
 import Chart from 'react-apexcharts';
@@ -6,18 +6,21 @@ import Chart from 'react-apexcharts';
 const ColumnChart = ({ fang, myene, punu }) => {
     // Données des contributions par langue
     const dataByLanguage = [
-        { language: "Fang", contributions: fang },
-        { language: "Myene", contributions: myene },
-        { language: "Punu", contributions: punu }
+        { language: "Fang", contributions: fang, color: "#1A56DB" },
+        { language: "Myene", contributions: myene, color: "#FDBA8C" },
+        { language: "Punu", contributions: punu, color: "#22C55E" }
     ];
 
     // Configuration du graphique avec les données par langue
     const options = {
-        colors: ["#1A56DB", "#FDBA8C", "#22C55E"], // Couleurs personnalisées
         series: [
             {
                 name: "Contributions",
-                data: dataByLanguage.map(item => ({ x: item.language, y: item.contributions })), // Données pour chaque langue
+                data: dataByLanguage.map(item => ({
+                    x: item.language,
+                    y: item.contributions,
+                    fillColor: item.color // Couleur personnalisée pour chaque point
+                })),
             }
         ],
         chart: {
@@ -32,6 +35,7 @@ const ColumnChart = ({ fang, myene, punu }) => {
                 columnWidth: "70%",
                 borderRadiusApplication: "end",
                 borderRadius: 8,
+                distributed: true, // Active la distribution des couleurs pour chaque barre
             },
         },
         tooltip: {
@@ -72,7 +76,9 @@ const ColumnChart = ({ fang, myene, punu }) => {
             axisTicks: { show: false },
         },
         yaxis: { show: false },
-        fill: { opacity: 1 },
+        fill: {
+            opacity: 1
+        },
     };
 
     return (
