@@ -28,5 +28,7 @@ export default function CoursDashboard() {
 
 
         </main>
+
+        
     );
 }

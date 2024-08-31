@@ -1,6 +1,16 @@
 import { Navbar } from "../_components/Navbar";
 import { Footer } from "../_components/Footer";
 import Image from "next/image";
+import Team from "../../public/assets/Teamwork.gif";
+import kik from "../../public/assets/kikonda.jpeg";
+import cha from "../../public/assets/charlie.jpeg";
+import jean from "../../public/assets/jean.jpeg";
+import chr from "../../public/assets/mando.jpeg";
+import jar from "../../public/assets/jarold.jpeg";
+
+
+
+
 export default function Apropos() {
     return (
         <main>
@@ -18,7 +28,7 @@ export default function Apropos() {
                     </div>
                     <div className="md:bg-black">
                         <Image
-                            src="/assets/Teamwork!.gif"
+                            src={Team}
                             width={500}
                             height={300}
                             alt="image"
@@ -36,7 +46,7 @@ export default function Apropos() {
                         <div className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300 mt-8 flex flex-col justify-center items-center">
                             <div>
                                 <Image
-                                    src="/assets/kikonda.jpeg"
+                                    src={kik}
                                     width={170}
                                     height={200}
                                     alt="image"
@@ -51,7 +61,7 @@ export default function Apropos() {
                         <div className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300 mt-8 flex flex-col justify-center items-center">
                             <div>
                                 <Image
-                                    src="/assets/charlie.jpeg"
+                                    src={cha}
                                     width={170}
                                     height={200}
                                     alt="image"
@@ -66,7 +76,7 @@ export default function Apropos() {
                         <div className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300 mt-8 flex flex-col justify-center items-center">
                             <div>
                                 <Image
-                                    src="/assets/jean.jpeg"
+                                    src={jean}
                                     width={170}
                                     height={200}
                                     alt="image"
@@ -81,7 +91,7 @@ export default function Apropos() {
                         <div className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300 lg:mx-[50px] mt-8 flex flex-col justify-center items-center">
                             <div>
                                 <Image
-                                    src="/assets/mando.jpeg"
+                                    src={chr}
                                     width={170}
                                     height={200}
                                     alt="image"
@@ -96,7 +106,7 @@ export default function Apropos() {
                         <div className="transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300 mt-8 flex flex-col justify-center items-center">
                             <div>
                                 <Image
-                                    src="/assets/jarold.jpeg"
+                                    src={jar}
                                     width={170}
                                     height={200}
                                     alt="image"
