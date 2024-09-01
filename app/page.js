@@ -100,7 +100,7 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <div
-      className="my-11 py-8 justify-center h-[300px] md:h-[400px] lg:h-[450px] lg:px-[10%] px-4 gap-1 bg-center bg-cover flex"
+      className="mb-11 py-8 justify-center h-[300px] md:h-[400px] lg:h-[450px] lg:px-[10%] px-4 gap-1 bg-center bg-cover flex"
       style={{ backgroundImage: "url(/assets/keywordSearch.gif)" }}
     >
 
