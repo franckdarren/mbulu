@@ -71,7 +71,7 @@ export function Aside({ data }) {
     }, [data]);
 
     return (
-        <aside className="aside is-placed-left is-expanded">
+        <aside className="aside is-placed-left h-full lg:fixed is-expanded">
             <div className="aside-tools">
                 <div className="flex items-center gap-3">
                     <Image

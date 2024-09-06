@@ -110,7 +110,7 @@ export default function Utilisateurs() {
                                 <th className="text-[15px] flex justify-end ">Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
                             {users.map((user) => (
                                 <tr key={user.clerkUserId}>
                                     <td className="text-[15px]">

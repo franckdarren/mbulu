@@ -121,7 +121,7 @@ export default function MesContributions() {
 
     return (
         <main>
-            <div className="flex justify-between items-end">
+            <div className="flex flex-col md:flex-row justify-center items-center md:justify-between md:items-end">
                 <AdminTitre titre="Mes contributions" />
                 <button onClick={() => setOpenModal(true)} className="p-2 mb-2 text-sm text-white rounded-md bg-[#1f2937] hover:bg-[#D5711C]">
                     Ajouter une contribution
@@ -190,18 +190,18 @@ export default function MesContributions() {
             ) : (
                 <table className="table bg-white border">
                     <thead>
-                        <tr>
-                            <th className="text-[15px] ">Mot ou expression</th>
-                            <th className="text-[15px] ">Traduction</th>
-                            <th className="text-[15px] ">Status</th>
-                            <th className="text-[15px] ">Date création</th>
-                            <th className="text-[15px] flex justify-end">Actions</th>
+                        <tr className="flex justify-between items-center">
+                            <th className="text-[15px] text-center flex-1">Mot ou expression</th>
+                            <th className="text-[15px] text-center flex-1">Traduction</th>
+                            <th className="text-[15px] text-center flex-1">Status</th>
+                            <th className="text-[15px] text-center flex-1">Date création</th>
+                            <th className="text-[15px] flex justify-end text-center flex-1">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {contributions.map((contribution) => (
-                            <tr key={contribution.id}>
-                                <td className="text-[15px]">
+                            <tr className="flex flex-col lg:flex-row items-center lg:justify-center" key={contribution.id}>
+                                <td className="text-[15px] text-center flex-1">
                                     <div className="flex items-center gap-3">
                                         <div>
                                             <div className="font-bold">{contribution.mot}</div>
@@ -209,13 +209,13 @@ export default function MesContributions() {
                                         </div>
                                     </div>
                                 </td>
-                                <td className="text-[15px]">{contribution.traduction}</td>
-                                <td className="text-[15px]">
+                                <td className="text-[15px] text-center flex-1">{contribution.traduction}</td>
+                                <td className="text-[15px] text-center flex-1">
                                     <span className={`text-[10px] font-medium me-2 px-2.5 py-0.5 rounded border ${getStatusClass(contribution.status)}`}>
                                         {contribution.status}
                                     </span>
                                 </td>
-                                <td className="text-[15px]">{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
+                                <td className="text-[15px] text-center flex-1">{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
                                 <td className="">
                                     <div className="flex items-center justify-end">
                                         <span
