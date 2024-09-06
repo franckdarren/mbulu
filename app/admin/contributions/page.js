@@ -236,7 +236,7 @@ export default function Contributions() {
           </thead>
           <tbody>
             {contributions.map((contribution) => (
-              <tr className="flex flex-col lg:flex-row items-center lg:justify-center" key={contribution.id}>
+              <tr className="flex flex-col md:flex-row items-center md:justify-center" key={contribution.id}>
                 <td className="text-[15px] text-center flex-1">
                   <div className="flex items-center gap-3">
                     <div>
@@ -269,7 +269,7 @@ export default function Contributions() {
                   )}
                 </td>
                 <td className="flex-1">
-                  <div className="flex lg:flex-col  items-center justify-center md:justify-end">
+                  <div className="flex md:flex-col  items-center justify-center md:justify-end">
                     <span
                       onClick={() => openEditModal(contribution)}
                       className="text-[12px] text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"

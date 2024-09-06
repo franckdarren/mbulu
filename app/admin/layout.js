@@ -34,7 +34,7 @@ export default async function Layout({ children }) {
   // }
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 mx-5">
       <Aside data={data} />
       <AdminNavbar data={data} />
       <div className="relative flex flex-col w-full z-0 lg:overflow-y-auto">{children}</div>

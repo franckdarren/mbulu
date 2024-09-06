@@ -200,7 +200,7 @@ export default function MesContributions() {
                     </thead>
                     <tbody>
                         {contributions.map((contribution) => (
-                            <tr className="flex flex-col lg:flex-row items-center lg:justify-center" key={contribution.id}>
+                            <tr className="flex flex-col md:flex-row items-center md:justify-center" key={contribution.id}>
                                 <td className="text-[15px] text-center flex-1">
                                     <div className="flex items-center gap-3">
                                         <div>
