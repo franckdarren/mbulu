@@ -130,7 +130,7 @@ export default function Contributions() {
   }
 
   return (
-    <main className="flex flex-col items-center w-full justify-center overflow-y-auto">
+    <main className="flex flex-col items-center overflow-x-hidden w-full justify-center overflow-y-auto">
       <AdminTitre titre="Contributions" />
       <Modal
         show={openModal}
@@ -222,10 +222,12 @@ export default function Contributions() {
           <ClipLoader size={50} color={"#1f2937"} />
         </div>
       ) : (
-        <table className="table bg-white border">
+        <table className="table bg-white border overflow-x-hidden">
           <thead>
             <tr className="flex justify-between items-center">
-              <th className="text-[15px] text-center flex-1">Mot ou expression</th>
+              <th className="text-[15px] text-center flex-1">
+                Mot ou expression
+              </th>
               <th className="text-[15px] text-center flex-1">Traduction</th>
               <th className="text-[15px] text-center flex-1">Status</th>
               <th className="text-[15px] text-center flex-1">Date création</th>
@@ -236,9 +238,12 @@ export default function Contributions() {
           </thead>
           <tbody>
             {contributions.map((contribution) => (
-              <tr className="flex flex-col md:flex-row items-center md:justify-center" key={contribution.id}>
-                <td className="text-[15px] text-center flex-1">
-                  <div className="flex items-center gap-3">
+              <tr
+                className="flex flex-col md:flex-row md:table-row items-center md:justify-center"
+                key={contribution.id}
+              >
+                <td className="table-cell md:w-full md:justify-center md:items-center text-[20px] md:text-[15px] text-center ">
+                  <div className="flex items-center justify-center gap-3">
                     <div>
                       <div className="font-bold">{contribution.mot}</div>
                       <div className="text-sm opacity-50">
@@ -247,32 +252,36 @@ export default function Contributions() {
                     </div>
                   </div>
                 </td>
-                <td className="text-[15px] text-center flex-1">{contribution.traduction}</td>
-                <td className="text-center flex-1">
+                <td className="table-cell  items-center md:w-full text-[20px] md:text-[15px] text-center">
+                  {contribution.traduction}
+                </td>
+                <td className="table-cell lg:w-full text-center flex-1">
                   <span
-                    className={`text-[10px] font-medium me-2 px-2.5 py-0.5 rounded border ${getStatusClass(
+                    className={`text-[15px] md:text-[10px] md:w-[70px] lg:w-full font-medium me-2 px-2.5 py-0.5 rounded border ${getStatusClass(
                       contribution.status
                     )}`}
                   >
                     {contribution.status}
                   </span>
                 </td>
-                <td className="text-[15px] text-center flex-1">
+                <td className="table-cell md:w-full text-[20px] md:text-[15px] text-center">
                   {format(new Date(contribution.createdAt), "dd MMMM yyyy", {
                     locale: fr,
                   })}
                 </td>
-                <td className="text-[15px] text-center flex-1">{contribution.user.name}</td>
-                <td className="text-[15px] text-center flex-1">
+                <td className="table-cell md:w-[70px] text-[20px] md:text-[15px] text-center">
+                  {contribution.user.name}
+                </td>
+                <td className="table-cell md:w-[50px] lg:w-full text-[20px] md:text-[15px] text-center ">
                   {contribution.validator && (
                     <p>{contribution.validator.name}</p>
                   )}
                 </td>
-                <td className="flex-1">
-                  <div className="flex md:flex-col  items-center justify-center md:justify-end">
+                <td className="table-cell md:flex md:justify-end flex-1">
+                  <div className="flex md:flex-col md:w-[80px] items-center justify-center md:justify-end">
                     <span
                       onClick={() => openEditModal(contribution)}
-                      className="text-[12px] text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
+                      className="text-[12px] text-white mx-1 p-2 md:w-full rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
                     >
                       Modifier
                     </span>
@@ -281,7 +290,7 @@ export default function Contributions() {
                       contribution.status !== "REJETE" && (
                         <span
                           onClick={() => handleApprove(contribution.id)}
-                          className="text-[12px] text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
+                          className="text-[12px] text-white mx-1 p-2 md:w-full rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"
                         >
                           {loadingApprove[contribution.id] ? (
                             <ClipLoader size={15} color={"#ffffff"} />

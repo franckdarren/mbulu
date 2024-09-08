@@ -121,7 +121,7 @@ export default function MesContributions() {
 
     return (
         <main>
-            <div className="flex flex-col md:flex-row justify-center items-center md:justify-between md:items-end">
+            <div className="flex flex-col md:flex-row overflow-x-hidden justify-center items-center md:justify-between md:items-end">
                 <AdminTitre titre="Mes contributions" />
                 <button onClick={() => setOpenModal(true)} className="p-2 mb-2 text-sm text-white rounded-md bg-[#1f2937] hover:bg-[#D5711C]">
                     Ajouter une contribution
@@ -200,8 +200,8 @@ export default function MesContributions() {
                     </thead>
                     <tbody>
                         {contributions.map((contribution) => (
-                            <tr className="flex flex-col md:flex-row items-center md:justify-center" key={contribution.id}>
-                                <td className="text-[15px] text-center flex-1">
+                            <tr className="flex flex-col md:flex-row md:table-row items-center md:justify-center" key={contribution.id}>
+                                <td className="table-cell md:w-full md:justify-center md:items-center text-[20px] md:text-[15px] text-center ">
                                     <div className="flex items-center gap-3">
                                         <div>
                                             <div className="font-bold">{contribution.mot}</div>
@@ -209,13 +209,13 @@ export default function MesContributions() {
                                         </div>
                                     </div>
                                 </td>
-                                <td className="text-[15px] text-center flex-1">{contribution.traduction}</td>
-                                <td className="text-[15px] text-center flex-1">
+                                <td className="table-cell  items-center md:w-full text-[20px] md:text-[15px] text-center">{contribution.traduction}</td>
+                                <td className="table-cell lg:w-full text-center flex-1">
                                     <span className={`text-[10px] font-medium me-2 px-2.5 py-0.5 rounded border ${getStatusClass(contribution.status)}`}>
                                         {contribution.status}
                                     </span>
                                 </td>
-                                <td className="text-[15px] text-center flex-1">{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
+                                <td className="table-cell lg:w-full text-center flex-1">{format(new Date(contribution.createdAt), 'dd MMMM yyyy', { locale: fr })}</td>
                                 <td className="">
                                     <div className="flex items-center justify-end">
                                         <span
