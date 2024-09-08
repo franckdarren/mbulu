@@ -5,7 +5,7 @@ import { SignOutButton } from "@clerk/nextjs";
 export function AdminNavbar({ data }) {
 
     return (
-        <nav id="navbar-main" className="navbar is-fixed-top">
+        <nav id="navbar-main" className="navbar is-fixed-top md:z-10 w-full">
             <div className="navbar-brand">
                 <a className="navbar-item mobile-aside-button">
                     <span className="icon"><i className="mdi mdi-forwardburger mdi-24px"></i></span>

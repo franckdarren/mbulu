@@ -103,31 +103,31 @@ export default function Utilisateurs() {
                 ) : (
                     <table className="table bg-white border">
                         <thead>
-                            <tr>
-                                <th className="text-[15px] ">Nom(s) et prénom(s)</th>
-                                <th className="text-[15px] ">Email</th>
-                                <th className="text-[15px] ">Date de création</th>
-                                <th className="text-[15px] flex justify-end ">Actions</th>
+                            <tr className="flex justify-between items-center">
+                                <th className="text-[15px] w-full text-center flex justify-center flex-1">Nom(s) et prénom(s)</th>
+                                <th className="text-[15px] w-full text-center flex justify-center flex-1">Email</th>
+                                <th className="text-[15px] w-full text-center flex justify-center flex-1">Date de création</th>
+                                <th className="text-[15px] w-[70px] text-center flex justify-center flex-1">Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
                             {users.map((user) => (
-                                <tr key={user.clerkUserId}>
-                                    <td className="text-[15px]">
-                                        <div className="flex items-center gap-3">
+                                <tr className="flex flex-col md:flex-row items-center w-full md:justify-center" key={user.clerkUserId}>
+                                    <td className="text-[15px] flex justify-center items-center text-center w-full flex-1">
+                                        <div className="flex md:justify-between items-center md:w-full gap-3">
                                             <div className="avatar">
                                                 <Image src={user.image} alt="Avatar" width={50} height={50} className="rounded-full" />
                                             </div>
                                             <div>
-                                                <div className="font-bold">{user.name}</div>
+                                                <div className="w-full font-bold">{user.name}</div>
                                                 <div className="text-sm opacity-50">{user.role}</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="text-[15px]">{user.email}</td>
-                                    <td className="text-[15px]">{new Date(user.createdAt).toLocaleDateString()}</td>
-                                    <td className="text-[15px]">
-                                        <div className="flex items-center justify-end">
+                                    <td className="text-[15px] text-center flex-1">{user.email}</td>
+                                    <td className="text-[15px] text-center flex-1">{new Date(user.createdAt).toLocaleDateString()}</td>
+                                    <td className="text-[15px] table-cell flex-1 text-center">
+                                        <div className="flex items-center justify-center">
                                             <span
                                                 onClick={() => openEditModal(user)}
                                                 className="text-[12px] text-white mx-1 p-2 rounded-md bg-[#1f2937] hover:bg-[#D5711C] flex items-center justify-center border cursor-pointer"

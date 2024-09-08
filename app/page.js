@@ -18,7 +18,7 @@ export default function Home() {
   }
 
   return (
-    <main className="">
+    <main className="relative z-0">
       <Navbar />
       <Header />
       <Section1 />
